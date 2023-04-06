@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Room Renting Website</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-OgVRvuATP1z7JjHLkuOU6Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+          crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    /* Global Styles */
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #333;
+    }
+    
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Navbar Styles */
+    .navbar {
+        background-color: #007bff;
+        color: #fff;
+    }
+    
+    .nav-link {
+        color: #fff;
+    }
+    
+    /* Jumbotron Styles */
+    .jumbotron {
+        background-image: url("jumbotron_bg.jpg");
+        background-size: cover;
+        color: #fff;
+        text-shadow: 1px 1px #000;
+    }
+    
+    .jumbotron h1,
+    .jumbotron p {
+        text-align: center;
+    }
+    
+    /* Room Card Styles */
+    .room-card {
+        margin-bottom: 30px;
+    }
+    
+    .room-card img {
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    /* Footer Styles */
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        margin-top: 30px;
+        padding: 20px 0;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 767px) {
+        .jumbotron h1 {
+            font-size: 2rem;
+        }
+    
+        .room-card img {
+            height: 200px;
+        }
+    }
+    
+
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">RoomRent</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Rooms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">Welcome to RoomRent</h1>
+            <p class="lead">Find your perfect room and enjoy your stay in our high-standard apartment</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2>About the Apartment</h2>
+                <p>Our apartment is located in a central area of the city, with easy access to public transportation and
+                    nearby attractions. The apartment has been recently renovated and features modern amenities, including
+                    high-speed internet, air conditioning, and a fully equipped kitchen.</p>
+                <h2>The Rooms</h2>
+                <p>We offer a variety of rooms to suit your needs, including single rooms, double rooms, and shared
+                    rooms. All of our rooms are fully furnished and feature comfortable beds, ample storage space, and
+                    natural light.</p>
+                <h2>Map of the Apartment</h2>
+                <p>Here's a map of the apartment, highlighting important features such as the living room, kitchen,
+                    bedrooms, and bathrooms:</p>
+                <img src="apartment_map.png" alt="Apartment Map" class="img-fluid">
+                <h2>Map of the Surroundings</h2>
+                <p>Here's a map of the surrounding area, showing nearby supermarkets, pharmacies, and other points of interest:</p>
+                <img src="surroundings_map.png" alt="Surroundings Map" class="img-fluid">
+                <h2>Map of the City</h2>
+                <p>Here's a map of the city, with attractions and landmarks highlighted:</p>
+                <img src="city_map.png" alt="City Map" class="img-fluid">
+            </div>
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Contact Us</h5>
+                        <p class="card-text">If you have any questions or would like to schedule a viewing, please feel free to contact us:</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><i class="fas fa-phone-alt mr-2"></i>+1 555-555-5555</li>
+                            <li class="list-group-item"><i class="fas fa-envelope mr-2"></i>info@roomrent.com</li>
+                            <li class="list-group-item"><i class="fas fa-map-marker-alt mr-2"></i>123 Main St, Anytown USA</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Amenities</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><i class="fas fa-wifi mr-2"></i>High-speed internet</li>
+                            <li class="list-group-item"><i class="fas fa-tv mr-2"></i>Cable TV</li>
+                            <li class="list-group-item"><i class="fas fa-thermometer-half mr-2"></i>Air conditioning</li>
+                            <li class="list-group-item"><i class="fas fa-utensils mr-2"></i>Fully equipped kitchen</li>
+                            <li class="list-group-item"><i class="fas fa-washer mr-2"></i>Washer and dryer</li>
+                            <li class="list-group-item"><i class="fas fa-shower mr-2"></i>Shared bathroom</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <p>&copy; 2023 RoomRent. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-4">
+                    <p class="text-right">Designed by ChatGPT</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+            integrity="sha384-xxx"
+            crossorigin="anonymous"></script>
+
+            <!-- Custom JS -->
+            <script src="script.js"></script>
+        </body>
+    </html>
+    
