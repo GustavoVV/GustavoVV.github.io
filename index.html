@@ -8,8 +8,49 @@
     <style>
         /* Add your custom CSS styles here */
     </style>
+    
+    <script> 
+    const languages = { 
+      en: { 
+        translation: { 
+          title: "Hello World!" 
+        } 
+      }, 
+      es: { 
+        translation: { 
+          title: "¡Hola Mundo!" 
+        } 
+      }, 
+      fr: { 
+        translation: { 
+          title: "Bonjour monde!" 
+        } 
+      } 
+    }; 
+  </script> 
 </head>
 <body>
+    <h1 id="title"></h1> 
+  
+  <a href="/en" onclick="changeLanguage('en')">English</a> 
+  <a href="/es" onclick="changeLanguage('es')">Spanish</a> 
+  <a href="/fr" onclick="changeLanguage('fr')">French</a> 
+    
+     <script> 
+    let currentLanguage = 'en';  
+    
+    function changeLanguage(lang) { 
+      currentLanguage = lang; 
+      translatePage(); 
+    } 
+    
+    function translatePage() { 
+      document.querySelector('#title').innerText = languages[currentLanguage].translation.title; 
+    }  
+    
+    translatePage(); 
+  </script> 
+    
     <header>
         <nav>
             <ul>
@@ -137,52 +178,4 @@ a map of the apartment layout showing locations of rooms, bathrooms, kitchen, li
 </body>
 </html>
 
-
-
-<html lang="en"> 
-<head> 
-  <script> 
-    const languages = { 
-      en: { 
-        translation: { 
-          title: "Hello World!" 
-        } 
-      }, 
-      es: { 
-        translation: { 
-          title: "¡Hola Mundo!" 
-        } 
-      }, 
-      fr: { 
-        translation: { 
-          title: "Bonjour monde!" 
-        } 
-      } 
-    }; 
-  </script> 
-</head> 
-<body>
-  
-  <h1 id="title"></h1> 
-  
-  <a href="/en" onclick="changeLanguage('en')">English</a> 
-  <a href="/es" onclick="changeLanguage('es')">Spanish</a> 
-  <a href="/fr" onclick="changeLanguage('fr')">French</a> 
-  
-  <script> 
-    let currentLanguage = 'en';  
-    
-    function changeLanguage(lang) { 
-      currentLanguage = lang; 
-      translatePage(); 
-    } 
-    
-    function translatePage() { 
-      document.querySelector('#title').innerText = languages[currentLanguage].translation.title; 
-    }  
-    
-    translatePage(); 
-  </script> 
-</body> 
-</html>
 
