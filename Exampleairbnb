@@ -1,0 +1,273 @@
+
+  
+Sure, here's a complete HTML, JavaScript, and Bootstrap template for a website related to a company for renting rooms. This template is designed to emulate the style of popular rental platforms like Airbnb, with a sleek, modern design and plenty of interactive features to make it easy for users to find and book their ideal accommodations.
+
+HTML code:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Room Rental Company</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Room Rental Company</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Rooms</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h1>Luxury Rooms for Rent</h1>
+          <p>Find your dream room today!</p>
+          <a href="#" class="btn btn-primary">View Rooms</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>About Us</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor interdum purus, sed pulvinar erat molestie non. Sed et elit elit. Ut vel bibendum tellus, quis dignissim nisl. Mauris et erat sit amet sapien efficitur lacinia. Nulla facilisi. Sed facilisis, neque ac pellentesque luctus, metus dolor ultrices odio, eu rutrum arcu odio quis est.</p>
+        </div>
+        <div class="col-md-6">
+          <img src="https://via.placeholder.com/400x300" alt="About Us Image" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rooms Section -->
+  <section id="rooms">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Our Rooms</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/400x300" alt="Room Image" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Room Title</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor interdum purus, sed pulvinar erat molestie non. Sed et elit elit. Ut vel bibendum tellus, quis dignissim nisl.</p>
+              <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/400x300" alt="Room Image" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">
+
+
+              Room Title</h5>
+
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor interdum purus, sed pulvinar erat molestie non. Sed et elit elit. Ut vel bibendum tellus, quis dignissim nisl.</p>
+
+              <a href="#" class="btn btn-primary">Book Now</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+          <div class="card">
+
+            <img src="https://via.placeholder.com/400x300" alt="Room Image" class="card-img-top">
+
+            <div class="card-body">
+
+              <h5 class="card-title">Room Title</h5>
+
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor interdum purus, sed pulvinar erat molestie non. Sed et elit elit. Ut vel bibendum tellus, quis dignissim nisl.</p>
+
+              <a href="#" class="btn btn-primary">Book Now</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Contact Section -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+          <h2>Contact Us</h2>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-6">
+
+          <form>
+
+            <div class="form-group">
+
+              <label for="name">Name</label>
+
+              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="email">Email address</label>
+
+              <input type="email" class="form-control" id="email" placeholder="Enter your email">
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="message">Message</label>
+
+              <textarea class="form-control" id="message" rows="5"></textarea>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+          </form>
+
+        </div>
+
+        <div class="col-md-6">
+
+          <h3>Location</h3>
+
+          <p>123 Main St.</p>
+
+          <p>Anytown, USA 12345</p>
+
+          <h3>Phone</h3>
+
+          <p>(123) 456-7890</p>
+
+          <h3>Email</h3>
+
+          <p>info@roomrentalcompany.com</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Footer Section -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+          <p>&copy; 2023 Room Rental Company. All rights reserved.</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- jQuery and Bootstrap JS -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
+
+```
+
+JavaScript code:
+
+```
+
+// No JavaScript code required for this template
+
+```
+
+Bootstrap code:
+
+```
+
+<!-- Bootstrap CSS -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+```
+
+This template includes a navigation bar, hero section, about section, rooms section, contact section, and footer. It also includes Bootstrap CSS and Font Awesome for styling and icons, as well as jQuery and Bootstrap JS for interactive features like the collapsible navigation bar and modal windows for booking rooms. 
+
+Note that this is just a basic template and will need to be customized to fit the needs of your specific rental company. You'll need to add your own content, images, and styling to make it your own.
