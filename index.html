@@ -1,65 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roommates Website</title>
-    <style>
-        /* Add your custom CSS styles here */
-    </style>
-    
-    <script> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Roommates Website</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <script> 
     const languages = { 
       en: { 
         translation: { 
-          title: "Hello World!" 
+          title: "Welcome" 
         } 
       }, 
       es: { 
         translation: { 
-          title: "¡Hola Mundo!" 
+          title: "Bienvenida" 
         } 
       }, 
       fr: { 
         translation: { 
-          title: "Bonjour monde!" 
+          title: "Bienvenue" 
         } 
       } 
     }; 
+
+    let currentLanguage = 'en';  
+    
+    function changeLanguage(lang) { 
+      currentLanguage = lang; 
+      translatePage(); 
+    } 
+    
+    function translatePage() { 
+      document.querySelector('#title').innerText = languages[currentLanguage].translation.title; 
+    }  
+    
+    translatePage(); 
   </script> 
+
 </head>
 <body>
-  
+ 
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     
-    <div class="container">
-  
-  <div class="row">
-    <div class="col-sm-6">
-      <h1 id="title"></h1>
-    </div>
-    <div class="col-sm-6">
-       <p>
-              
-       <a href="/en" onclick="changeLanguage('en')">English</a> 
-  <a href="/es" onclick="changeLanguage('es')">Spanish</a> 
-  <a href="/fr" onclick="changeLanguage('fr')">French</a> 
-      
-        </p>
+      <div class="container">
+          <h1 class="display-4">Welcome to Roommates</h1>
       </div>
-  </div> 
+
   
-  <div class="row">
-    <div class="col">
-      <h2>Bienvenida / Welcome / Bienvenue </h2>
-      <ul>
-        <li>Web Design</li> 
-        <li>UX Design</li> 
-        <li>App Development</li> 
-        <li>Digital Marketing</li> 
-           <section id="welcome">
-            <p>
-            
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><W/span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Rooms</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+        <li class="nav-item">
+
+        <a href="/en" onclick="changeLanguage('en')">English</a> 
+      </li>
+      <li class="nav-item">
+        <a href="/es" onclick="changeLanguage('es')">Spanish</a> 
+      </li>
+      <li class="nav-item">
+        <a href="/fr" onclick="changeLanguage('fr')">French</a> 
+      </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <nav>
+            <ul>
+                <li><a href="#welcome">Bienvenida / Welcome / Bienvenue</a></li>
+                <li><a href="#contact-list">Lista de contactos / Contact list / Liste de contacts</a></li>
+                <li><a href="#apartment-map">Mapa del apartamento / Apartment map / Plan de l'appartement</a></li>
+                <li><a href="#neighborhood-guide">Guía del vecindario / Neighborhood guide / Guide du quartier</a></li>
+                <li><a href="#city-guide">Guía de la ciudad / City guide / Guide de la ville</a></li>
+                <li><a href="#forum">Foro / Message board / Forum</a></li>
+                <li><a href="#photo-gallery">Galería de fotos / Photo gallery / Galerie</a></li>
+            </ul>
+        </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>welcome</h2>
+          <p>
             - House rules: Normas de la casa / House rules / Règles de la maison 
             - Rent and bill due dates: Fechas de vencimiento de alquiler y facturas / Rent and bill due dates / Dates d'échéance du loyer et des factures 
             - Cleaning schedule: Horario de limpieza / Cleaning schedule / Horaire de nettoyage
@@ -104,92 +163,92 @@ Don't miss out on this fantastic living space!
           Contact us today to schedule a tour and live your dream life in sunny Valencia, Spain.
             Our living space is designed to provide you with a comfortable, convenient, and affordable living space that you can call home.
 
-            </p>
-        
-        </section>
+          
+          
+          </p>
+        </div>
+        <div class="col-md-6">
+          <img src="https://via.placeholder.com/400x300" alt="About Us Image" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
 
-          
-          
-      </ul>
-    </div>
-  </div> 
-        
-            <div class="col-sm-6">
-      <h2>About Us</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="col-sm-6">
-      <h2>Our Mission</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-    </div>
-  </div> 
-    
+  <!-- Rooms Section -->
+  <section id="rooms">
+    <div class="container">
       <div class="row">
-    <div class="col">
-      <h2>Our Services</h2>
-      <ul>
-        <li>Web Design</li> 
-        <li>UX Design</li> 
-        <li>App Development</li> 
-        <li>Digital Marketing</li> 
-      </ul>
-    </div>
-  </div> 
-        
-  
-  
-  <div class="row">
-    <div class="col">
-      <h2>Contact Us</h2>
-      <!-- Contact form here -->
-    </div>
-  </div> 
-  
-</div>
-  
- 
-    
-     <script> 
-    let currentLanguage = 'en';  
-    
-    function changeLanguage(lang) { 
-      currentLanguage = lang; 
-      translatePage(); 
-    } 
-    
-    function translatePage() { 
-      document.querySelector('#title').innerText = languages[currentLanguage].translation.title; 
-    }  
-    
-    translatePage(); 
-  </script> 
-    
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#welcome">Bienvenida / Welcome / Bienvenue</a></li>
-                <li><a href="#contact-list">Lista de contactos / Contact list / Liste de contacts</a></li>
-                <li><a href="#apartment-map">Mapa del apartamento / Apartment map / Plan de l'appartement</a></li>
-                <li><a href="#neighborhood-guide">Guía del vecindario / Neighborhood guide / Guide du quartier</a></li>
-                <li><a href="#city-guide">Guía de la ciudad / City guide / Guide de la ville</a></li>
-                <li><a href="#forum">Foro / Message board / Forum</a></li>
-                <li><a href="#photo-gallery">Galería de fotos / Photo gallery / Galerie</a></li>
-            </ul>
-        </nav>
-    </header>
+        <div class="col-md-12">
+          <h2>Our Rooms</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/400x300" alt="Room Image" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Room Title</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor interdum purus, sed pulvinar erat molestie non. Sed et elit elit. Ut vel bibendum tellus, quis dignissim nisl.</p>
+              <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/400x300" alt="Room Image" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">
 
-    <main>
-       
-        <section id="contact-list">
-            Lista de contactos / Contact list / Liste de contacts 
-            - Roommate names, phones and emails: Nombres de compañeros de piso, teléfonos y correos electrónicos / Roommate names, phones and emails / Noms des colocataires, téléphones et e-mails 
-            - Emergency contacts: Contactos de emergencia / Emergency contacts / Contacts d'urgence 
-            
-            Internet: llamar al 1706 o WhatsApp página de pepephone +34 623 03 34 98
-            Urgencies:  112
-            Fontanero: 
-            Cerrajero:
-            Bomberos y Emergencias:112
+
+              Room Title</h5>
+
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor interdum purus, sed pulvinar erat molestie non. Sed et elit elit. Ut vel bibendum tellus, quis dignissim nisl.</p>
+
+              <a href="#" class="btn btn-primary">Book Now</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+          <div class="card">
+
+            <img src="https://via.placeholder.com/400x300" alt="Room Image" class="card-img-top">
+
+            <div class="card-body">
+
+              <h5 class="card-title">Room Title</h5>
+
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor interdum purus, sed pulvinar erat molestie non. Sed et elit elit. Ut vel bibendum tellus, quis dignissim nisl.</p>
+
+              <a href="#" class="btn btn-primary">Book Now</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section id="contact-list">
+    Lista de contactos / Contact list / Liste de contacts 
+    - Roommate names, phones and emails: Nombres de compañeros de piso, teléfonos y correos electrónicos / Roommate names, phones and emails / Noms des colocataires, téléphones et e-mails 
+    - Emergency contacts: Contactos de emergencia / Emergency contacts / Contacts d'urgence 
+    
+    Internet: llamar al 1706 o WhatsApp página de pepephone +34 623 03 34 98
+    Urgencies:  112
+    Fontanero: 
+    Cerrajero:
+    Bomberos y Emergencias:112
 Policía Local:092
 Policía Nacional:091
 Teléfono Ciudadano:010
@@ -197,91 +256,197 @@ Información Generalitat:012
 Violencia de Género:016
 
 
-        </section>
+</section>
 
-        <section id="links">
-            Telefonos contacto Ayuntamiento de Valencia
-            https://www.valencia.es/es/-/tel%C3%A9fonos-de-urgencia-en-la-ciudad-de-valencia
-            
-                    </section>
-  
-        <section id="apartment-map">
-            Mapa del apartamento / Apartment map / Plan de l'appartement 
+<section id="links">
+    Telefonos contacto Ayuntamiento de Valencia
+    https://www.valencia.es/es/-/tel%C3%A9fonos-de-urgencia-en-la-ciudad-de-valencia
+    
+            </section>
+
+<section id="apartment-map">
+    Mapa del apartamento / Apartment map / Plan de l'appartement 
 - Interactive map showing: Mapa interactivo que muestra / Interactive map showing / Carte interactive montrant 
-    - Rooms: Habitaciones / Rooms / Chambres 
-    - Bathrooms: Baños / Bathrooms / Salles de bain 
-    - Kitchen: Cocina / Kitchen / Cuisine 
-    - Living room: Salón / Living room / Salon 
-    - Exits: Salidas / Exits / Sorties 
-    - Thermostats: Termostatos / Thermostats / Thermostats 
+- Rooms: Habitaciones / Rooms / Chambres 
+- Bathrooms: Baños / Bathrooms / Salles de bain 
+- Kitchen: Cocina / Kitchen / Cuisine 
+- Living room: Salón / Living room / Salon 
+- Exits: Salidas / Exits / Sorties 
+- Thermostats: Termostatos / Thermostats / Thermostats 
 - Descriptions and rules for each room: Descripciones y reglas para cada habitación / Descriptions and rules for each room / Descriptions et règles pour chaque pièce
 
 
 
 a map of the apartment layout showing locations of rooms, bathrooms, kitchen, living room, exits, thermostats, etc.
 
-            toma general de agua, toma general de luz, tendedero de arriba misma llave, 
-            tomas de agua y luz de la finca,
-            
-        </section>
+    toma general de agua, toma general de luz, tendedero de arriba misma llave, 
+    tomas de agua y luz de la finca,
+    
+</section>
 
-        <section id="neighborhood-guide">
-            Neighborhood guide: A page with an interactive map of the surrounding neighborhood marking locations of nearby points of interest like grocery stores, restaurants, laundromats, hospitals, public transit stops, etc. Provide addresses, contact info and walking directions to each location. 
+<section id="neighborhood-guide">
+    Neighborhood guide: A page with an interactive map of the surrounding neighborhood marking locations of nearby points of interest like grocery stores, restaurants, laundromats, hospitals, public transit stops, etc. Provide addresses, contact info and walking directions to each location. 
 
-            Neighborhood guide: 
-            Guía del vecindario / Neighborhood guide / Guide du quartier 
-            - Interactive map of nearby places: Mapa interactivo de lugares cercanos / Interactive map of nearby places / Carte interactive des lieux à proximité 
-                - Grocery stores: Supermercados / Grocery stores / Épiceries 
-                - Restaurants: Restaurantes / Restaurants / Restaurants 
-                - Laundromats: Lavanderías / Laundromats / Laveries 
-                - Hospitals: Hospitales / Hospitals / Hôpitaux 
-                - Public transit stops: Paradas de transporte público / Public transit stops / Arrêts de transport public 
-            - Address, contact and walking directions for each location: Dirección, contacto y direcciones para caminar a cada ubicación / Address, contact and walking directions for each location / Adresse, contact et directions pour marcher à chaque emplacement 
-            
+    Neighborhood guide: 
+    Guía del vecindario / Neighborhood guide / Guide du quartier 
+    - Interactive map of nearby places: Mapa interactivo de lugares cercanos / Interactive map of nearby places / Carte interactive des lieux à proximité 
+        - Grocery stores: Supermercados / Grocery stores / Épiceries 
+        - Restaurants: Restaurantes / Restaurants / Restaurants 
+        - Laundromats: Lavanderías / Laundromats / Laveries 
+        - Hospitals: Hospitales / Hospitals / Hôpitaux 
+        - Public transit stops: Paradas de transporte público / Public transit stops / Arrêts de transport public 
+    - Address, contact and walking directions for each location: Dirección, contacto y direcciones para caminar a cada ubicación / Address, contact and walking directions for each location / Adresse, contact et directions pour marcher à chaque emplacement 
+    
 
-        </section>
+</section>
 
-        <section id="city-guide">
-            A wider map of the entire city showing major landmarks, attractions, and routes to get to various parts of the city. Highlight any important locations for the roommates like school campuses or workplaces. Provide an overview of public transit options like buses, trains, bike sharing, etc.
+<section id="city-guide">
+    A wider map of the entire city showing major landmarks, attractions, and routes to get to various parts of the city. Highlight any important locations for the roommates like school campuses or workplaces. Provide an overview of public transit options like buses, trains, bike sharing, etc.
 
-            A way for the roommates to communicate any suggestions annonimally  in one place. Provide the option to privately message individuals as well.
-            City guide: 
-            Guía de la ciudad / City guide / Guide de la ville 
-            - Map of city showing attractions and transit options: Mapa de la ciudad que muestra atracciones y opciones de tránsito / Map of city showing attractions and transit options / Carte de la ville montrant attractions et options de transit 
-            - Major landmarks: Principales lugares de interés / Major landmarks / Principaux monuments 
-            - Attractions: Atracciones / Attractions / Attractions 
-            - Buses: Autobuses / Buses / Bus 
-            - Trains: Trenes / Trains / Trains 
-            - Bike sharing: Compartición de bicicletas / Bike sharing / Partage de vélos 
-            - Important locations for roommates: Ubicaciones importantes para los compañeros de piso / Important locations for roommates / Emplacements importants pour les colocataires 
-            
-        </section>
+    A way for the roommates to communicate any suggestions annonimally  in one place. Provide the option to privately message individuals as well.
+    City guide: 
+    Guía de la ciudad / City guide / Guide de la ville 
+    - Map of city showing attractions and transit options: Mapa de la ciudad que muestra atracciones y opciones de tránsito / Map of city showing attractions and transit options / Carte de la ville montrant attractions et options de transit 
+    - Major landmarks: Principales lugares de interés / Major landmarks / Principaux monuments 
+    - Attractions: Atracciones / Attractions / Attractions 
+    - Buses: Autobuses / Buses / Bus 
+    - Trains: Trenes / Trains / Trains 
+    - Bike sharing: Compartición de bicicletas / Bike sharing / Partage de vélos 
+    - Important locations for roommates: Ubicaciones importantes para los compañeros de piso / Important locations for roommates / Emplacements importants pour les colocataires 
+    
+</section>
 
-        <section id="forum">
-            Forum/Message board: 
-            Foro / Message board / Forum 
-            - Discuss issues, questions or suggestions: Discutir problemas, preguntas o sugerencias / Discuss issues, questions or suggestions / Discuter des problèmes, des questions ou des suggestions 
-            - Private messaging option: Opción de mensajería privada / Private messaging option / Option de messagerie privée 
-            
-        </section>
+<section id="forum">
+    Forum/Message board: 
+    Foro / Message board / Forum 
+    - Discuss issues, questions or suggestions: Discutir problemas, preguntas o sugerencias / Discuss issues, questions or suggestions / Discuter des problèmes, des questions ou des suggestions 
+    - Private messaging option: Opción de mensajería privada / Private messaging option / Option de messagerie privée 
+    
+</section>
 
-        <section id="photo-gallery">
-            Galería de fotos / Photo gallery / Galerie
-        </section>
-        <section id="recommendations">
-            Each roommate can contribute recommendations for their favorite local restaurants, bars, services and entertainment in the neighborhood. This helps new roommates discover the area.
-        </section>
+<section id="photo-gallery">
+    Galería de fotos / Photo gallery / Galerie
+</section>
+<section id="recommendations">
+    Each roommate can contribute recommendations for their favorite local restaurants, bars, services and entertainment in the neighborhood. This helps new roommates discover the area.
+</section>
+  <!-- Contact Section -->
 
-    </main>
+  <section id="contact">
 
-    <footer>
-        <!-- Add your footer content here -->
-    </footer>
+    <div class="container">
 
-    <script>
-        // Add your custom JavaScript code here
-    </script>
+      <div class="row">
+
+        <div class="col-md-12">
+
+          <h2>Contact Us</h2>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-6">
+
+          <form>
+
+            <div class="form-group">
+
+              <label for="name">Name</label>
+
+              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="email">Email address</label>
+
+              <input type="email" class="form-control" id="email" placeholder="Enter your email">
+
+            </div>
+
+            <div class="form-group">
+
+              <label for="message">Message</label>
+
+              <textarea class="form-control" id="message" rows="5"></textarea>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+          </form>
+
+        </div>
+
+        <div class="col-md-6">
+
+          <h3>Location</h3>
+
+          <p>123 Main St.</p>
+
+          <p>Anytown, USA 12345</p>
+
+          <h3>Phone</h3>
+
+          <p>(123) 456-7890</p>
+
+          <h3>Email</h3>
+
+          <p>info@roomrentalcompany.com</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- Footer Section -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+          <p>&copy; 2023 Room Rental Company. All rights reserved.</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- jQuery and Bootstrap JS -->
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
 </body>
+
 </html>
 
+
+<!-- Bootstrap CSS -->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 
