@@ -19,6 +19,7 @@
             background-color: #004d40;
             padding-top: 20px;
             display: none;
+            z-index: 1000;
         }
         .sidebar a {
             padding: 15px 20px;
@@ -160,6 +161,7 @@
         function showSection(sectionId) {
             $('.section').removeClass('active');
             $('#' + sectionId).addClass('active');
+            toggleSidebar(); // Colapsar el menú después de seleccionar una sección
         }
     </script>
 </body>
