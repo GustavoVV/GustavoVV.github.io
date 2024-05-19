@@ -70,30 +70,10 @@
     <button class="open-btn" onclick="toggleSidebar()">☰ Menú</button>
 
     <div class="main-content" id="main-content">
-        <div class="container text-center mt-5" id="principal">
+        <div class="container text-center mt-5 section active" id="principal">
             <h1>Bienvenido</h1>
             <p>Esta aplicación está destinada exclusivamente para médicos. Esta es una versión beta y la información proporcionada aquí no es confiable ni debe considerarse una recomendación médica. Cualquier uso de la información aquí dada es bajo su propia responsabilidad.</p>
             <p>Utilice el menú para navegar a través de las diferentes secciones de la aplicación.</p>
-        </div>
-        <div class="container text-center mt-5" id="home">
-            <h1>Secciones</h1>
-            <div class="row mt-5">
-                <div class="col-12 col-md-6 mb-3">
-                    <button class="btn btn-teal btn-block" onclick="showSection('diagnosticos')">Diagnósticos</button>
-                </div>
-                <div class="col-12 col-md-6 mb-3">
-                    <button class="btn btn-teal btn-block" onclick="showSection('tratamientos')">Tratamientos</button>
-                </div>
-                <div class="col-12 col-md-6 mb-3">
-                    <button class="btn btn-teal btn-block" onclick="showSection('imagenes')">Imágenes Médicas</button>
-                </div>
-                <div class="col-12 col-md-6 mb-3">
-                    <button class="btn btn-teal btn-block" onclick="showSection('protocoloClinico')">Protocolo Clínico</button>
-                </div>
-                <div class="col-12 col-md-6 mb-3">
-                    <button class="btn btn-teal btn-block" onclick="showSection('protocoloToledo')">Protocolo Toledo</button>
-                </div>
-            </div>
         </div>
         <div id="diagnosticos" class="section container mt-5">
             <h2>Diagnósticos</h2>
@@ -179,11 +159,7 @@
 
         function showSection(sectionId) {
             $('.section').removeClass('active');
-            if (sectionId === 'home') {
-                $('#home').addClass('active');
-            } else {
-                $('#' + sectionId).addClass('active');
-            }
+            $('#' + sectionId).addClass('active');
         }
     </script>
 </body>
