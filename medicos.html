@@ -5,27 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Principal</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Estilos para centrar el popup */
+        .modal-dialog {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        /* Color verde marino oscuro para los botones */
+        .btn-teal {
+            background-color: #004d40;
+            color: white;
+        }
+    </style>
 </head>
 <body>
+    <!-- Contenido de la página -->
     <div class="container text-center mt-5">
         <h1>Bienvenido</h1>
         <div class="row mt-5">
             <div class="col-12 col-md-6 mb-3">
-                <a href="protocolos.html" class="btn btn-primary btn-block">Protocolos</a>
+                <a href="protocolos.html" class="btn btn-teal btn-block">Protocolos</a>
             </div>
             <div class="col-12 col-md-6 mb-3">
-                <a href="diagnosticos.html" class="btn btn-primary btn-block">Diagnósticos</a>
+                <a href="diagnosticos.html" class="btn btn-teal btn-block">Diagnósticos</a>
             </div>
             <div class="col-12 col-md-6 mb-3">
-                <a href="tratamientos.html" class="btn btn-primary btn-block">Tratamientos</a>
+                <a href="tratamientos.html" class="btn btn-teal btn-block">Tratamientos</a>
             </div>
             <div class="col-12 col-md-6 mb-3">
-                <a href="imagenes.html" class="btn btn-primary btn-block">Imágenes Médicas</a>
+                <a href="imagenes.html" class="btn btn-teal btn-block">Imágenes Médicas</a>
             </div>
         </div>
     </div>
+
+    <!-- Popup Modal -->
+    <div class="modal fade" id="warningModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Advertencia</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Esta aplicación está destinada exclusivamente para médicos. Esta es una versión beta y la información proporcionada aquí no es confiable ni debe considerarse una recomendación médica. Cualquier uso de la información aquí dada es bajo su propia responsabilidad.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="acceptButton">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Mostrar el modal al cargar la página
+            $('#warningModal').modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+
+            // Manejar el clic del botón de aceptar
+            $('#acceptButton').on('click', function() {
+                $('#warningModal').modal('hide');
+            });
+        });
+    </script>
 </body>
 </html>
