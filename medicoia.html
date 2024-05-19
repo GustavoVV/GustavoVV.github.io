@@ -59,7 +59,7 @@
 </head>
 <body>
     <div class="sidebar" id="sidebar">
-        <a href="javascript:void(0)" onclick="showSection('home')">Home</a>
+        <a href="javascript:void(0)" onclick="showSection('principal')">Principal</a>
         <a href="javascript:void(0)" onclick="showSection('diagnosticos')">Diagnósticos</a>
         <a href="javascript:void(0)" onclick="showSection('tratamientos')">Tratamientos</a>
         <a href="javascript:void(0)" onclick="showSection('imagenes')">Imágenes Médicas</a>
@@ -70,9 +70,14 @@
     <button class="open-btn" onclick="toggleSidebar()">☰ Menú</button>
 
     <div class="main-content" id="main-content">
-        <div class="container text-center mt-5">
+        <div class="container text-center mt-5" id="principal">
             <h1>Bienvenido</h1>
-            <div class="row mt-5" id="home">
+            <p>Esta aplicación está destinada exclusivamente para médicos. Esta es una versión beta y la información proporcionada aquí no es confiable ni debe considerarse una recomendación médica. Cualquier uso de la información aquí dada es bajo su propia responsabilidad.</p>
+            <p>Utilice el menú para navegar a través de las diferentes secciones de la aplicación.</p>
+        </div>
+        <div class="container text-center mt-5" id="home">
+            <h1>Secciones</h1>
+            <div class="row mt-5">
                 <div class="col-12 col-md-6 mb-3">
                     <button class="btn btn-teal btn-block" onclick="showSection('diagnosticos')">Diagnósticos</button>
                 </div>
@@ -89,40 +94,35 @@
                     <button class="btn btn-teal btn-block" onclick="showSection('protocoloToledo')">Protocolo Toledo</button>
                 </div>
             </div>
-            <div id="diagnosticos" class="section">
-                <h2>Diagnósticos</h2>
-                <div id="chat">
-                    <p>Aquí va el chat...</p>
-                </div>
-                <button class="btn btn-secondary mt-3" onclick="showSection('home')">Atrás</button>
+        </div>
+        <div id="diagnosticos" class="section container mt-5">
+            <h2>Diagnósticos</h2>
+            <div id="chat">
+                <p>Aquí va el chat...</p>
             </div>
-            <div id="tratamientos" class="section">
-                <h2>Tratamientos</h2>
-                <div id="chat">
-                    <p>Aquí va el chat...</p>
-                </div>
-                <button class="btn btn-secondary mt-3" onclick="showSection('home')">Atrás</button>
+        </div>
+        <div id="tratamientos" class="section container mt-5">
+            <h2>Tratamientos</h2>
+            <div id="chat">
+                <p>Aquí va el chat...</p>
             </div>
-            <div id="imagenes" class="section">
-                <h2>Imágenes Médicas</h2>
-                <div id="chat">
-                    <p>Aquí va el chat...</p>
-                </div>
-                <button class="btn btn-secondary mt-3" onclick="showSection('home')">Atrás</button>
+        </div>
+        <div id="imagenes" class="section container mt-5">
+            <h2>Imágenes Médicas</h2>
+            <div id="chat">
+                <p>Aquí va el chat...</p>
             </div>
-            <div id="protocoloClinico" class="section">
-                <h2>Protocolo Clínico</h2>
-                <div id="chat">
-                    <p>Aquí va el chat...</p>
-                </div>
-                <button class="btn btn-secondary mt-3" onclick="showSection('home')">Atrás</button>
+        </div>
+        <div id="protocoloClinico" class="section container mt-5">
+            <h2>Protocolo Clínico</h2>
+            <div id="chat">
+                <p>Aquí va el chat...</p>
             </div>
-            <div id="protocoloToledo" class="section">
-                <h2>Protocolo Toledo</h2>
-                <div id="chat">
-                    <p>Aquí va el chat...</p>
-                </div>
-                <button class="btn btn-secondary mt-3" onclick="showSection('home')">Atrás</button>
+        </div>
+        <div id="protocoloToledo" class="section container mt-5">
+            <h2>Protocolo Toledo</h2>
+            <div id="chat">
+                <p>Aquí va el chat...</p>
             </div>
         </div>
     </div>
@@ -162,7 +162,7 @@
             });
 
             // Mostrar la sección inicial
-            showSection('home');
+            showSection('principal');
         });
 
         function toggleSidebar() {
@@ -180,9 +180,8 @@
         function showSection(sectionId) {
             $('.section').removeClass('active');
             if (sectionId === 'home') {
-                $('.row').show();
+                $('#home').addClass('active');
             } else {
-                $('.row').hide();
                 $('#' + sectionId).addClass('active');
             }
         }
