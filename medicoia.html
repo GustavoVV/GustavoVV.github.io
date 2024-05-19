@@ -6,15 +6,45 @@
     <title>Página Principal</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .modal-dialog {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9f5f2;
         }
-        .btn-teal {
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #004d40;
+            padding-top: 20px;
+            display: none;
+        }
+        .sidebar a {
+            padding: 15px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+        }
+        .sidebar a:hover {
+            background-color: #00695c;
+        }
+        .main-content {
+            margin-left: 0;
+            transition: margin-left 0.5s;
+        }
+        .open-btn {
+            font-size: 20px;
+            cursor: pointer;
             background-color: #004d40;
             color: white;
+            padding: 10px 15px;
+            border: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1;
         }
         .section {
             display: none;
@@ -22,62 +52,78 @@
         .active {
             display: block;
         }
+        .container {
+            padding-top: 70px;
+        }
     </style>
 </head>
 <body>
-    <div class="container text-center mt-5">
-        <h1>Bienvenido</h1>
-        <div class="row mt-5">
-            <div class="col-12 col-md-6 mb-3">
-                <button class="btn btn-teal btn-block" onclick="showSection('diagnosticos')">Diagnósticos</button>
+    <div class="sidebar" id="sidebar">
+        <a href="javascript:void(0)" onclick="showSection('home')">Home</a>
+        <a href="javascript:void(0)" onclick="showSection('diagnosticos')">Diagnósticos</a>
+        <a href="javascript:void(0)" onclick="showSection('tratamientos')">Tratamientos</a>
+        <a href="javascript:void(0)" onclick="showSection('imagenes')">Imágenes Médicas</a>
+        <a href="javascript:void(0)" onclick="showSection('protocoloClinico')">Protocolo Clínico</a>
+        <a href="javascript:void(0)" onclick="showSection('protocoloToledo')">Protocolo Toledo</a>
+    </div>
+
+    <button class="open-btn" onclick="toggleSidebar()">☰ Menú</button>
+
+    <div class="main-content" id="main-content">
+        <div class="container text-center mt-5">
+            <h1>Bienvenido</h1>
+            <div class="row mt-5" id="home">
+                <div class="col-12 col-md-6 mb-3">
+                    <button class="btn btn-teal btn-block" onclick="showSection('diagnosticos')">Diagnósticos</button>
+                </div>
+                <div class="col-12 col-md-6 mb-3">
+                    <button class="btn btn-teal btn-block" onclick="showSection('tratamientos')">Tratamientos</button>
+                </div>
+                <div class="col-12 col-md-6 mb-3">
+                    <button class="btn btn-teal btn-block" onclick="showSection('imagenes')">Imágenes Médicas</button>
+                </div>
+                <div class="col-12 col-md-6 mb-3">
+                    <button class="btn btn-teal btn-block" onclick="showSection('protocoloClinico')">Protocolo Clínico</button>
+                </div>
+                <div class="col-12 col-md-6 mb-3">
+                    <button class="btn btn-teal btn-block" onclick="showSection('protocoloToledo')">Protocolo Toledo</button>
+                </div>
             </div>
-            <div class="col-12 col-md-6 mb-3">
-                <button class="btn btn-teal btn-block" onclick="showSection('tratamientos')">Tratamientos</button>
+            <div id="diagnosticos" class="section">
+                <h2>Diagnósticos</h2>
+                <div id="chat">
+                    <p>Aquí va el chat...</p>
+                </div>
+                <button class="btn btn-secondary mt-3" onclick="showSection('home')">Atrás</button>
             </div>
-            <div class="col-12 col-md-6 mb-3">
-                <button class="btn btn-teal btn-block" onclick="showSection('imagenes')">Imágenes Médicas</button>
+            <div id="tratamientos" class="section">
+                <h2>Tratamientos</h2>
+                <div id="chat">
+                    <p>Aquí va el chat...</p>
+                </div>
+                <button class="btn btn-secondary mt-3" onclick="showSection('home')">Atrás</button>
             </div>
-            <div class="col-12 col-md-6 mb-3">
-                <button class="btn btn-teal btn-block" onclick="showSection('protocoloClinico')">Protocolo Clínico</button>
+            <div id="imagenes" class="section">
+                <h2>Imágenes Médicas</h2>
+                <div id="chat">
+                    <p>Aquí va el chat...</p>
+                </div>
+                <button class="btn btn-secondary mt-3" onclick="showSection('home')">Atrás</button>
             </div>
-            <div class="col-12 col-md-6 mb-3">
-                <button class="btn btn-teal btn-block" onclick="showSection('protocoloToledo')">Protocolo Toledo</button>
+            <div id="protocoloClinico" class="section">
+                <h2>Protocolo Clínico</h2>
+                <div id="chat">
+                    <p>Aquí va el chat...</p>
+                </div>
+                <button class="btn btn-secondary mt-3" onclick="showSection('home')">Atrás</button>
             </div>
-        </div>
-        <div id="diagnosticos" class="section">
-            <h2>Diagnósticos</h2>
-            <div id="chat">
-                <p>Aquí va el chat...</p>
+            <div id="protocoloToledo" class="section">
+                <h2>Protocolo Toledo</h2>
+                <div id="chat">
+                    <p>Aquí va el chat...</p>
+                </div>
+                <button class="btn btn-secondary mt-3" onclick="showSection('home')">Atrás</button>
             </div>
-            <button class="btn btn-secondary mt-3" onclick="showSection('home')">Atrás</button>
-        </div>
-        <div id="tratamientos" class="section">
-            <h2>Tratamientos</h2>
-            <div id="chat">
-                <p>Aquí va el chat...</p>
-            </div>
-            <button class="btn btn-secondary mt-3" onclick="showSection('home')">Atrás</button>
-        </div>
-        <div id="imagenes" class="section">
-            <h2>Imágenes Médicas</h2>
-            <div id="chat">
-                <p>Aquí va el chat...</p>
-            </div>
-            <button class="btn btn-secondary mt-3" onclick="showSection('home')">Atrás</button>
-        </div>
-        <div id="protocoloClinico" class="section">
-            <h2>Protocolo Clínico</h2>
-            <div id="chat">
-                <p>Aquí va el chat...</p>
-            </div>
-            <button class="btn btn-secondary mt-3" onclick="showSection('home')">Atrás</button>
-        </div>
-        <div id="protocoloToledo" class="section">
-            <h2>Protocolo Toledo</h2>
-            <div id="chat">
-                <p>Aquí va el chat...</p>
-            </div>
-            <button class="btn btn-secondary mt-3" onclick="showSection('home')">Atrás</button>
         </div>
     </div>
 
@@ -118,6 +164,18 @@
             // Mostrar la sección inicial
             showSection('home');
         });
+
+        function toggleSidebar() {
+            var sidebar = document.getElementById('sidebar');
+            var mainContent = document.getElementById('main-content');
+            if (sidebar.style.display === 'none' || sidebar.style.display === '') {
+                sidebar.style.display = 'block';
+                mainContent.style.marginLeft = '250px';
+            } else {
+                sidebar.style.display = 'none';
+                mainContent.style.marginLeft = '0';
+            }
+        }
 
         function showSection(sectionId) {
             $('.section').removeClass('active');
