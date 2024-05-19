@@ -12,8 +12,14 @@
         <div class="mt-3">
             <!-- Placeholder for chat implementation -->
             <div id="chat">
-                <p>Aquí va el chat...</p>
-            </div>
+<flowise-fullchatbot></flowise-fullchatbot>
+<script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.initFull({
+        chatflowid: "4a1b8f1e-3fed-44e0-888b-eaaedc85e5dc",
+        apiHost: "https://flowise-wfdq.onrender.com",
+    })
+</script>            </div>
             <a href="medicos.html" class="btn btn-secondary mt-3">Atrás</a>
         </div>
     </div>
