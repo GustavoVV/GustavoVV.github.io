@@ -5,153 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Principal</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #e9f5f2;
-        }
-        .sidebar {
-            height: 100%;
-            width: 250px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            background-color: #004d40;
-            padding-top: 20px;
-            display: none;
-            z-index: 1000;
-        }
-        .sidebar a {
-            padding: 15px 20px;
-            text-decoration: none;
-            font-size: 18px;
-            color: white;
-            display: block;
-        }
-        .sidebar a:hover {
-            background-color: #00695c;
-        }
-        .main-content {
-            margin-left: 0;
-            transition: margin-left 0.5s;
-        }
-        .open-btn {
-            font-size: 20px;
-            cursor: pointer;
-            background-color: #004d40;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1;
-        }
-        .section {
-            display: none;
-        }
-        .active {
-            display: block;
-        }
-        .container {
-            padding-top: 70px;
-        }
-    </style>
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
     <div class="sidebar" id="sidebar">
-        <a href="javascript:void(0)" onclick="showSection('principal')">Principal</a>
-        <a href="javascript:void(0)" onclick="showSection('diagnosticos')">Diagnósticos</a>
-        <a href="javascript:void(0)" onclick="showSection('tratamientos')">Tratamientos</a>
-        <a href="javascript:void(0)" onclick="showSection('imagenes')">Imágenes Médicas</a>
-        <a href="javascript:void(0)" onclick="showSection('protocoloClinico')">Protocolo Clínico</a>
-        <a href="javascript:void(0)" onclick="showSection('protocoloToledo')">Protocolo Toledo</a>
+        <a href="index.html">Principal</a>
+        <a href="diagnosticos.html">Diagnósticos</a>
+        <a href="tratamientos.html">Tratamientos</a>
+        <a href="imagenes.html">Imágenes Médicas</a>
+        <a href="protocoloClinico.html">Protocolo Clínico</a>
+        <a href="protocoloToledo.html">Protocolo Toledo</a>
     </div>
 
     <button class="open-btn" onclick="toggleSidebar()">☰ Menú</button>
 
     <div class="main-content" id="main-content">
-        <div class="container text-center mt-5 section active" id="principal">
+        <div class="container text-center mt-5">
             <h1>Bienvenido</h1>
-            <p>Antes de enviar cualquier información asegúrese que esta anonimizada. Esta aplicación está destinada exclusivamente para médicos. Esta es una versión beta y la información proporcionada aquí no es confiable ni debe considerarse una recomendación médica. Cualquier uso de la información aquí dada es bajo su propia responsabilidad.</p>
+            <p>Esta aplicación está destinada exclusivamente para médicos. Esta es una versión beta y la información proporcionada aquí no es confiable ni debe considerarse una recomendación médica. Cualquier uso de la información aquí dada es bajo su propia responsabilidad.</p>
             <p>Utilice el menú para navegar a través de las diferentes secciones de la aplicación.</p>
-        </div>
-        <div id="diagnosticos" class="section container mt-5">
-            <h2>Diagnósticos</h2>
-            <div id="chat">
-<flowise-fullchatbot></flowise-fullchatbot>
-                
-<script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-    Chatbot.init({
-        chatflowid: "c98b8742-b027-4f85-9601-a6fb72f1644d",
-        apiHost: "https://flowise-wfdq.onrender.com",
-    })
-</script>
-
-
-
-
-
-                
-            </div>
-        </div>
-        <div id="tratamientos" class="section container mt-5">
-            <h2>Tratamientos/Dosis</h2>
-            <div id="chat">
- <flowise-fullchatbot></flowise-fullchatbot>      
-<script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-    Chatbot.init({
-        chatflowid: "e7910c4d-0a95-4443-a82f-1761bad06fab",
-        apiHost: "https://flowise-wfdq.onrender.com",
-    })
-</script>
-
-                </div>
-        </div>
-        <div id="imagenes" class="section container mt-5">
-            <h2>Imágenes Médicas</h2>
-            <div id="chat">
-<flowise-fullchatbot></flowise-fullchatbot>
-<script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-    Chatbot.initFull({
-        chatflowid: "4a1b8f1e-3fed-44e0-888b-eaaedc85e5dc",
-        apiHost: "https://flowise-wfdq.onrender.com",
-    })
-</script>
-
-            </div>
-        </div>
-        <div id="protocoloClinico" class="section container mt-5">
-            <h2>Protocolo Clínico</h2>
-            <div id="chat">
-  <flowise-fullchatbot></flowise-fullchatbot>              
-
-<script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-    Chatbot.init({
-        chatflowid: "b3d87caa-d1db-4de5-99d0-485659e8d96b",
-        apiHost: "https://flowise-wfdq.onrender.com",
-    })
-</script>
-            </div>
-        </div>
-        <div id="protocoloToledo" class="section container mt-5">
-            <h2>Protocolo Toledo</h2>
-            <div id="chat">
-                
-
-<flowise-fullchatbot></flowise-fullchatbot>
-<script type="module">
-    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-    Chatbot.initFull({
-        chatflowid: "b3d87caa-d1db-4de5-99d0-485659e8d96b",
-        apiHost: "https://flowise-wfdq.onrender.com",
-    })
-</script>
-            </div>
         </div>
     </div>
 
@@ -163,7 +35,7 @@
                     <h5 class="modal-title" id="exampleModalLabel">Advertencia</h5>
                 </div>
                 <div class="modal-body">
-                    <p>Antes de enviar cualquier información asegúrese que esta anonimizada.Esta aplicación está destinada exclusivamente para médicos. Esta es una versión beta y la información proporcionada aquí no es confiable ni debe considerarse una recomendación médica. Cualquier uso de la información aquí dada es bajo su propia responsabilidad.</p>
+                    <p>Esta aplicación está destinada exclusivamente para médicos. Esta es una versión beta y la información proporcionada aquí no es confiable ni debe considerarse una recomendación médica. Cualquier uso de la información aquí dada es bajo su propia responsabilidad.</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" id="acceptButton">Aceptar</button>
@@ -172,44 +44,9 @@
         </div>
     </div>
 
-    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Mostrar el modal al cargar la página
-            $('#warningModal').modal({
-                backdrop: 'static',
-                keyboard: false
-            });
-
-            // Manejar el clic del botón de aceptar
-            $('#acceptButton').on('click', function() {
-                $('#warningModal').modal('hide');
-            });
-
-            // Mostrar la sección inicial
-            showSection('principal');
-        });
-
-        function toggleSidebar() {
-            var sidebar = document.getElementById('sidebar');
-            var mainContent = document.getElementById('main-content');
-            if (sidebar.style.display === 'none' || sidebar.style.display === '') {
-                sidebar.style.display = 'block';
-                mainContent.style.marginLeft = '250px';
-            } else {
-                sidebar.style.display = 'none';
-                mainContent.style.marginLeft = '0';
-            }
-        }
-
-        function showSection(sectionId) {
-            $('.section').removeClass('active');
-            $('#' + sectionId).addClass('active');
-            toggleSidebar(); // Colapsar el menú después de seleccionar una sección
-        }
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
