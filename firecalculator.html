@@ -63,6 +63,14 @@
         .mt-3 {
             margin-top: 1rem !important;
         }
+        .d-inline-block {
+            display: inline-block;
+        }
+
+        .w-auto {
+            width: auto;
+}
+
     </style>
 </head>
 
@@ -75,63 +83,59 @@
                 <h3>Current Scenario</h3>
                 <form id="financialForm1" class="mt-4">
                     <div class="form-group">
-                        <label for="age1">Age</label>
+                        <label for="age1" title="Enter your current age">Age</label>
                         <input type="number" class="form-control" id="age1" value="18">
                     </div>
                     <div class="form-group">
-                        <label for="income1">Income (after tax)</label>
+                        <label for="income1" title="Enter your annual income after taxes">Income (after tax)</label>
                         <input type="number" class="form-control" id="income1" value="40000">
                     </div>
                     <div class="form-group">
-                        <label for="spending1">Spending</label>
+                        <label for="spending1" title="Enter your annual spending">Spending</label>
                         <input type="number" class="form-control" id="spending1" value="14000">
                     </div>
                     <div class="form-group">
-                        <label for="investments1">Current Investments</label>
+                        <label for="investments1" title="Enter the current value of your investments">Current Investments</label>
                         <input type="number" class="form-control" id="investments1" value="20000">
                     </div>
-                    <div class="form-group">
-                        <label for="stockPercent1">Invested %</label>
-                        <input type="number" class="form-control" id="stockPercent1" value="80">
-                    </div>
+
                 </form>
             </div>
             <div class="col-md-6">
                 <h3>Modified Scenario</h3>
                 <form id="financialForm2" class="mt-4">
                     <div class="form-group">
-                        <label for="age2">Age</label>
+                        <label for="age2" title="Enter your modified scenario age">Age</label>
                         <input type="number" class="form-control" id="age2" value="18">
                     </div>
                     <div class="form-group">
-                        <label for="income2">Income (after tax)</label>
+                        <label for="income2" title="Enter your modified scenario annual income after taxes">Income (after tax)</label>
                         <input type="number" class="form-control" id="income2" value="60000">
                     </div>
                     <div class="form-group">
-                        <label for="spending2">Spending</label>
+                        <label for="spending2" title="Enter your modified scenario annual spending">Spending</label>
                         <input type="number" class="form-control" id="spending2" value="25000">
                     </div>
                     <div class="form-group">
-                        <label for="investments2">Current Investments</label>
+                        <label for="investments2" title="Enter the current value of your investments in the modified scenario">Current Investments</label>
                         <input type="number" class="form-control" id="investments2" value="20000">
                     </div>
-                    <div class="form-group">
-                        <label for="stockPercent2">Invested %</label>
-                        <input type="number" class="form-control" id="stockPercent2" value="80">
-                    </div>
+
                 </form>
             </div>
         </div>
-        <div class="text-center">
-            <button type="button" class="btn btn-primary mt-3" onclick="calculate()">Calculate</button>
+        <div class="text-center mt-3">
+            <div class="form-group d-inline-block">
+                <label for="annualReturn" class="d-block" title="Expected annual return on investments as a percentage">Annual Return (%)</label>                <input type="number" class="form-control d-inline-block w-auto" id="annualReturn" name="annualReturn" value="7" step="0.01" min="0" max="100">
+            </div>
+            <button type="button" class="btn btn-primary mt-3 d-inline-block" onclick="calculate()">Calculate</button>
         </div>
         <div class="text-center mt-3">
             <label id="currentFreedomTargetLabel"></label><br>
             <label id="modifiedFreedomTargetLabel"></label>
         </div>
-        <canvas id="myChart" class="mt-5"></canvas>
-
         
+        <canvas id="myChart" class="mt-5"></canvas>
     </div>
 
     <script>
@@ -142,7 +146,6 @@
                     initialIncome: parseFloat(document.getElementById(`income${prefix}`).value),
                     spending: parseFloat(document.getElementById(`spending${prefix}`).value),
                     investments: parseFloat(document.getElementById(`investments${prefix}`).value),
-                    stockPercent: parseFloat(document.getElementById(`stockPercent${prefix}`).value)
                 };
             };
 
@@ -155,7 +158,10 @@
                 let years = [];
                 let savings = [];
                 let totalSavings = values.investments;
-                let annualReturn = 0.081 * (values.stockPercent / 100);
+                let annualReturn = parseFloat(document.getElementById('annualReturn').value) / 100.0;
+
+
+
                 let income = values.initialIncome;
 
                 for (let i = 0; i <= 30; i++) {
