@@ -5,9 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financial and Energy Management Platform</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div id="navbar"></div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Management Platform</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#income-optimization">Income Optimization <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#energy-optimization">Energy Optimization</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#freedom-calculator">Financial Freedom Calculator</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div id="content">
         <h1>Welcome to Your Financial and Energy Management Platform</h1>
         <div id="file-upload">
@@ -38,26 +57,50 @@
                 <button type="button" onclick="optimizeEnergy()">Submit</button>
             </form>
         </div>
-        <div id="freedom-calculator">
+        <div id="freedom-calculator" class="container">
             <h2>Financial Freedom Calculator</h2>
-            <form id="freedomForm">
-                <label for="currentIncome">Current Annual Income ($):</label>
-                <input type="number" id="currentIncome" name="currentIncome"><br>
-                <label for="currentExpenses">Current Annual Expenses ($):</label>
-                <input type="number" id="currentExpenses" name="currentExpenses"><br>
-                <label for="currentSavingsRate">Current Savings Rate (%):</label>
-                <input type="number" id="currentSavingsRate" name="currentSavingsRate"><br>
-                <label for="investmentReturnRate">Expected Annual Investment Return Rate (%):</label>
-                <input type="number" id="investmentReturnRate" name="investmentReturnRate"><br>
-                <label for="withdrawalRate">Safe Withdrawal Rate (%):</label>
-                <input type="number" id="withdrawalRate" name="withdrawalRate"><br>
-                <button type="button" onclick="calculateFinancialFreedom()">Calculate</button>
-            </form>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Current State</h3>
+                    <form id="freedomFormCurrent">
+                        <label for="currentIncome">Current Annual Income ($):</label>
+                        <input type="number" id="currentIncome" name="currentIncome"><br>
+                        <label for="currentExpenses">Current Annual Expenses ($):</label>
+                        <input type="number" id="currentExpenses" name="currentExpenses"><br>
+                        <label for="currentSavingsRate">Current Savings Rate (%):</label>
+                        <input type="number" id="currentSavingsRate" name="currentSavingsRate"><br>
+                        <label for="investmentReturnRate">Expected Annual Investment Return Rate (%):</label>
+                        <input type="number" id="investmentReturnRate" name="investmentReturnRate"><br>
+                        <label for="withdrawalRate">Safe Withdrawal Rate (%):</label>
+                        <input type="number" id="withdrawalRate" name="withdrawalRate"><br>
+                        <button type="button" onclick="calculateCurrentFinancialFreedom()">Calculate Current</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <h3>Future State</h3>
+                    <form id="freedomFormFuture">
+                        <label for="futureIncome">Future Annual Income ($):</label>
+                        <input type="number" id="futureIncome" name="futureIncome"><br>
+                        <label for="futureExpenses">Future Annual Expenses ($):</label>
+                        <input type="number" id="futureExpenses" name="futureExpenses"><br>
+                        <label for="futureSavingsRate">Future Savings Rate (%):</label>
+                        <input type="number" id="futureSavingsRate" name="futureSavingsRate"><br>
+                        <label for="futureInvestmentReturnRate">Expected Future Annual Investment Return Rate (%):</label>
+                        <input type="number" id="futureInvestmentReturnRate" name="futureInvestmentReturnRate"><br>
+                        <label for="futureWithdrawalRate">Future Safe Withdrawal Rate (%):</label>
+                        <input type="number" id="futureWithdrawalRate" name="futureWithdrawalRate"><br>
+                        <button type="button" onclick="calculateFutureFinancialFreedom()">Calculate Future</button>
+                    </form>
+                </div>
+            </div>
         </div>
         <div id="analysis-results"></div>
         <canvas id="freedomChart" width="400" height="200"></canvas>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/umd"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
