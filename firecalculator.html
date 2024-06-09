@@ -1,106 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial and Energy Management Platform</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Financial Independence Calculator</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.2"></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .container {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .form-control {
+            background-color: #2c2c2c;
+            color: #e0e0e0;
+            border: 1px solid #444;
+        }
+
+        .form-control:focus {
+            background-color: #2c2c2c;
+            color: #e0e0e0;
+            border: 1px solid #777;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        h1, h3, label {
+            color: #e0e0e0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-5 {
+            margin-top: 3rem !important;
+        }
+
+        .mt-4 {
+            margin-top: 1.5rem !important;
+        }
+
+        .mt-3 {
+            margin-top: 1rem !important;
+        }
+    </style>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Management Platform</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#income-optimization">Income Optimization <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#energy-optimization">Energy Optimization</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#freedom-calculator">Financial Freedom Calculator</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div id="content">
-        <h1>Welcome to Your Financial and Energy Management Platform</h1>
-        <div id="file-upload">
-            <input type="file" id="fileInput" accept=".xlsx, .xls">
-            <button onclick="handleFileUpload()">Upload and Analyze</button>
-        </div>
-        <div id="income-optimization">
-            <h2>Optimize Your Income</h2>
-            <form id="incomeForm">
-                <label for="job">Current Job:</label>
-                <input type="text" id="job" name="job"><br>
-                <label for="skills">Skills:</label>
-                <input type="text" id="skills" name="skills"><br>
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="location"><br>
-                <button type="button" onclick="optimizeIncome()">Submit</button>
-            </form>
-        </div>
-        <div id="energy-optimization">
-            <h2>Optimize Your Energy Consumption</h2>
-            <form id="energyForm">
-                <label for="homeSize">Home Size (sqm):</label>
-                <input type="number" id="homeSize" name="homeSize"><br>
-                <label for="appliances">Number of Appliances:</label>
-                <input type="number" id="appliances" name="appliances"><br>
-                <label for="lights">Number of Lights:</label>
-                <input type="number" id="lights" name="lights"><br>
-                <button type="button" onclick="optimizeEnergy()">Submit</button>
-            </form>
-        </div>
-        <div id="freedom-calculator" class="container">
-            <h2>Financial Freedom Calculator</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>Current State</h3>
-                    <form id="freedomFormCurrent">
-                        <label for="currentIncome">Current Annual Income ($):</label>
-                        <input type="number" id="currentIncome" name="currentIncome"><br>
-                        <label for="currentExpenses">Current Annual Expenses ($):</label>
-                        <input type="number" id="currentExpenses" name="currentExpenses"><br>
-                        <label for="currentSavingsRate">Current Savings Rate (%):</label>
-                        <input type="number" id="currentSavingsRate" name="currentSavingsRate"><br>
-                        <label for="investmentReturnRate">Expected Annual Investment Return Rate (%):</label>
-                        <input type="number" id="investmentReturnRate" name="investmentReturnRate"><br>
-                        <label for="withdrawalRate">Safe Withdrawal Rate (%):</label>
-                        <input type="number" id="withdrawalRate" name="withdrawalRate"><br>
-                        <button type="button" onclick="calculateCurrentFinancialFreedom()">Calculate Current</button>
-                    </form>
-                </div>
-                <div class="col-md-6">
-                    <h3>Future State</h3>
-                    <form id="freedomFormFuture">
-                        <label for="futureIncome">Future Annual Income ($):</label>
-                        <input type="number" id="futureIncome" name="futureIncome"><br>
-                        <label for="futureExpenses">Future Annual Expenses ($):</label>
-                        <input type="number" id="futureExpenses" name="futureExpenses"><br>
-                        <label for="futureSavingsRate">Future Savings Rate (%):</label>
-                        <input type="number" id="futureSavingsRate" name="futureSavingsRate"><br>
-                        <label for="futureInvestmentReturnRate">Expected Future Annual Investment Return Rate (%):</label>
-                        <input type="number" id="futureInvestmentReturnRate" name="futureInvestmentReturnRate"><br>
-                        <label for="futureWithdrawalRate">Future Safe Withdrawal Rate (%):</label>
-                        <input type="number" id="futureWithdrawalRate" name="futureWithdrawalRate"><br>
-                        <button type="button" onclick="calculateFutureFinancialFreedom()">Calculate Future</button>
-                    </form>
-                </div>
+    <div class="container">
+        <h1 class="mt-5 text-center">Financial Independence Calculator</h1>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Current Scenario</h3>
+                <form id="financialForm1" class="mt-4">
+                    <div class="form-group">
+                        <label for="age1">Age</label>
+                        <input type="number" class="form-control" id="age1" value="18">
+                    </div>
+                    <div class="form-group">
+                        <label for="income1">Income (after tax)</label>
+                        <input type="number" class="form-control" id="income1" value="40000">
+                    </div>
+                    <div class="form-group">
+                        <label for="spending1">Spending</label>
+                        <input type="number" class="form-control" id="spending1" value="14000">
+                    </div>
+                    <div class="form-group">
+                        <label for="investments1">Current Investments</label>
+                        <input type="number" class="form-control" id="investments1" value="20000">
+                    </div>
+                    <div class="form-group">
+                        <label for="stockPercent1">Invested %</label>
+                        <input type="number" class="form-control" id="stockPercent1" value="80">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <h3>Modified Scenario</h3>
+                <form id="financialForm2" class="mt-4">
+                    <div class="form-group">
+                        <label for="age2">Age</label>
+                        <input type="number" class="form-control" id="age2" value="18">
+                    </div>
+                    <div class="form-group">
+                        <label for="income2">Income (after tax)</label>
+                        <input type="number" class="form-control" id="income2" value="60000">
+                    </div>
+                    <div class="form-group">
+                        <label for="spending2">Spending</label>
+                        <input type="number" class="form-control" id="spending2" value="25000">
+                    </div>
+                    <div class="form-group">
+                        <label for="investments2">Current Investments</label>
+                        <input type="number" class="form-control" id="investments2" value="20000">
+                    </div>
+                    <div class="form-group">
+                        <label for="stockPercent2">Invested %</label>
+                        <input type="number" class="form-control" id="stockPercent2" value="80">
+                    </div>
+                </form>
             </div>
         </div>
-        <div id="analysis-results"></div>
-        <canvas id="freedomChart" width="400" height="200"></canvas>
+        <div class="text-center">
+            <button type="button" class="btn btn-primary mt-3" onclick="calculate()">Calculate</button>
+        </div>
+        <div class="text-center mt-3">
+            <label id="currentFreedomTargetLabel"></label><br>
+            <label id="modifiedFreedomTargetLabel"></label>
+        </div>
+        <canvas id="myChart" class="mt-5"></canvas>
+
+        
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="app.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/umd"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function calculate() {
+            const getValues = (prefix) => {
+                return {
+                    age: parseFloat(document.getElementById(`age${prefix}`).value),
+                    initialIncome: parseFloat(document.getElementById(`income${prefix}`).value),
+                    spending: parseFloat(document.getElementById(`spending${prefix}`).value),
+                    investments: parseFloat(document.getElementById(`investments${prefix}`).value),
+                    stockPercent: parseFloat(document.getElementById(`stockPercent${prefix}`).value)
+                };
+            };
+
+            const values1 = getValues(1);
+            const values2 = getValues(2);
+
+            const calculateSavings = (values) => {
+                const savingsRate = (values.initialIncome - values.spending) / values.initialIncome;
+                const fireTarget = values.spending * 25;
+                let years = [];
+                let savings = [];
+                let totalSavings = values.investments;
+                let annualReturn = 0.081 * (values.stockPercent / 100);
+                let income = values.initialIncome;
+
+                for (let i = 0; i <= 30; i++) {
+                    years.push(values.age + i);
+                    savings.push(totalSavings);
+                    totalSavings += (income * savingsRate) + (totalSavings * annualReturn);
+                }
+                return { years, savings, fireTarget };
+            };
+
+            const data1 = calculateSavings(values1);
+            const data2 = calculateSavings(values2);
+
+            const findYearOfFreedom = (savings, years, target) => {
+                for (let i = 0; i < savings.length; i++) {
+                    if (savings[i] >= target) {
+                        return years[i];
+                    }
+                }
+                return years[years.length - 1];
+            };
+
+            const currentFreedomYear = findYearOfFreedom(data1.savings, data1.years, data1.fireTarget);
+            const modifiedFreedomYear = findYearOfFreedom(data2.savings, data2.years, data2.fireTarget);
+
+            document.getElementById("currentFreedomTargetLabel").innerText = `Current Scenario Target: $${data1.fireTarget.toLocaleString()}`;
+            document.getElementById("modifiedFreedomTargetLabel").innerText = `Modified Scenario Target: $${data2.fireTarget.toLocaleString()}`;
+
+            const data = {
+                labels: data1.years,
+                datasets: [
+                    {
+                        label: 'Current Scenario',
+                        data: data1.savings,
+                        fill: false,
+                        borderColor: 'rgb(75, 192, 192)',
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Modified Scenario',
+                        data: data2.savings,
+                        fill: false,
+                        borderColor: 'rgb(255, 99, 132)',
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Current Financial Freedom',
+                        data: data1.years.map(() => data1.fireTarget),
+                        fill: false,
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderDash: [10, 5],
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Modified Financial Freedom',
+                        data: data2.years.map(() => data2.fireTarget),
+                        fill: false,
+                        borderColor: 'rgba(255, 206, 86, 1)',
+                        borderDash: [10, 5],
+                        tension: 0.1
+                    }
+                ]
+            };
+
+            const config = {
+                type: 'line',
+                data: data,
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            min: 0,
+                            max: 2000000,
+                            ticks: {
+                                stepSize: 50000,
+                                color: '#e0e0e0'
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                color: '#e0e0e0'
+                            }
+                        }
+                    },
+                    plugins: {
+                        annotation: {
+                            annotations: [
+                                {
+                                    type: 'line',
+                                    mode: 'vertical',
+                                    scaleID: 'x',
+                                    value: currentFreedomYear-values1.age,
+                                    borderColor: 'rgba(54, 162, 235, 0.5)',
+                                    borderWidth: 2,
+                                    label: {
+                                        enabled: true,
+                                        content: `Current Scenario Financial Freedom (Age: ${currentFreedomYear})`,
+                                        color: 'rgba(54, 162, 235, 0.5)'
+                                    }
+                                },
+                                {
+                                    type: 'line',
+                                    mode: 'vertical',
+                                    scaleID: 'x',
+                                    value: modifiedFreedomYear -values2.age,
+                                    borderColor: 'rgba(255, 206, 86, 0.5)',
+                                    borderWidth: 2,
+                                    label: {
+                                        enabled: true,
+                                        content: `Modified Scenario Financial Freedom (Age: ${modifiedFreedomYear})`,
+                                        yAdjust: -30,
+                                        color: 'rgba(255, 206, 86, 0.5)'
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            };
+
+            // Check if chart already exists and destroy it before creating a new one
+            if (window.myChart instanceof Chart) {
+                window.myChart.destroy();
+            }
+
+            window.myChart = new Chart(
+                document.getElementById('myChart'),
+                config
+            );
+        }
+    </script>
 </body>
+
 </html>
