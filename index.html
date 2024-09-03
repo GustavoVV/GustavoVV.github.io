@@ -12,7 +12,41 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
-
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+    }
+    .navbar {
+      background-color: #343a40;
+    }
+    .navbar-brand, .nav-link {
+      color: #fff !important;
+    }
+    .navbar-brand:hover, .nav-link:hover {
+      color: #ffc107 !important;
+    }
+    .section-title {
+      color: #343a40;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .card-title {
+      color: #343a40;
+    }
+    .btn-primary {
+      background-color: #ffc107;
+      border-color: #ffc107;
+    }
+    .btn-primary:hover {
+      background-color: #e0a800;
+      border-color: #e0a800;
+    }
+    .footer {
+      background-color: #343a40;
+      color: #fff;
+      padding: 20px 0;
+    }
+  </style>
   <script>
     const languages = {
       en: { translation: { title: "Welcome" } },
@@ -46,7 +80,7 @@
   </script>
 
   <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
       <a class="navbar-brand" href="#">Roommates</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -73,9 +107,9 @@
   <!-- Welcome Section -->
   <section id="about" class="py-5">
     <div class="container">
+      <h2 class="section-title">Welcome to Roommates</h2>
       <div class="row">
         <div class="col-md-6">
-          <h2 class="mb-4">Welcome to Roommates</h2>
           <p>Welcome to our sunny room for rent in Valencia, Spain! We are excited to offer you a <strong>comfortable and functional living space</strong> that combines convenience, compromise, and location.</p>
           <p>As your hosts, we take great pride in ensuring that our living space is <strong>clean</strong>, <strong>well-maintained</strong>, and equipped with all the necessary amenities to make your stay enjoyable. Here are some important things you should know:</p>
           <ul>
@@ -87,7 +121,7 @@
           <p>Contact us today to schedule a tour and live your dream life in sunny Valencia, Spain!</p>
         </div>
         <div class="col-md-6">
-          <img src="plano.jpeg" alt="About Us Image" class="img-fluid">
+          <img src="plano.jpeg" alt="About Us Image" class="img-fluid rounded">
         </div>
       </div>
     </div>
@@ -96,11 +130,7 @@
   <!-- Rooms Section -->
   <section id="rooms" class="py-5 bg-light">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h2 class="mb-4">Our Rooms</h2>
-        </div>
-      </div>
+      <h2 class="section-title">Our Rooms</h2>
       <div class="row">
         <div class="col-md-3">
           <div class="card mb-4">
@@ -149,7 +179,7 @@
   <!-- Contact List Section -->
   <section id="contact-list" class="py-5">
     <div class="container">
-      <h2 class="mb-4">Contact List</h2>
+      <h2 class="section-title">Contact List</h2>
       <table class="table table-bordered">
         <thead class="thead-light">
           <tr>
@@ -174,7 +204,7 @@
   <!-- Links Section -->
   <section id="links" class="py-5 bg-light">
     <div class="container">
-      <h2 class="mb-4">Links</h2>
+      <h2 class="section-title">Links</h2>
       <a href="https://www.valencia.es/es/-/tel%C3%A9fonos-de-urgencia-en-la-ciudad-de-valencia" class="link">Teléfonos contacto Ayuntamiento de Valencia</a>
     </div>
   </section>
@@ -182,7 +212,7 @@
   <!-- Apartment Map Section -->
   <section id="apartment-map" class="py-5">
     <div class="container">
-      <h2 class="mb-4">Apartment Map</h2>
+      <h2 class="section-title">Apartment Map</h2>
       <p>Interactive map showing:</p>
       <ul>
         <li>Rooms: Habitaciones / Rooms / Chambres</li>
@@ -199,7 +229,7 @@
   <!-- Neighborhood Guide Section -->
   <section id="neighborhood-guide" class="py-5 bg-light">
     <div class="container">
-      <h2 class="mb-4">Neighborhood Guide</h2>
+      <h2 class="section-title">Neighborhood Guide</h2>
       <p>Interactive map of nearby places:</p>
       <ul>
         <li>Grocery stores: Supermercados / Grocery stores / Épiceries</li>
@@ -215,8 +245,8 @@
   <!-- City Guide Section -->
   <section id="city-guide" class="py-5">
     <div class="container">
-      <h2 class="mb-4">City Guide</h2>
-      <img src="https://i.pinimg.com/736x/4b/4e/de/4b4edee0ddf1f30a15968ebb62490866--valencia.jpg" alt="City Image" class="img-fluid mb-4">
+      <h2 class="section-title">City Guide</h2>
+      <img src="https://i.pinimg.com/736x/4b/4e/de/4b4edee0ddf1f30a15968ebb62490866--valencia.jpg" alt="City Image" class="img-fluid mb-4 rounded">
       <p>Map of city showing attractions and transit options:</p>
       <ul>
         <li>Major landmarks: Principales lugares de interés / Major landmarks / Principaux monuments</li>
@@ -232,7 +262,7 @@
   <!-- Forum Section -->
   <section id="forum" class="py-5 bg-light">
     <div class="container">
-      <h2 class="mb-4">Message Board</h2>
+      <h2 class="section-title">Message Board</h2>
       <p>Discuss issues, questions or suggestions:</p>
       <ul>
         <li>Private messaging option: Opción de mensajería privada / Private messaging option / Option de messagerie privée</li>
@@ -243,14 +273,14 @@
   <!-- Photo Gallery Section -->
   <section id="photo-gallery" class="py-5">
     <div class="container">
-      <h2 class="mb-4">Photo Gallery</h2>
+      <h2 class="section-title">Photo Gallery</h2>
     </div>
   </section>
 
   <!-- Recommendations Section -->
   <section id="recommendations" class="py-5 bg-light">
     <div class="container">
-      <h2 class="mb-4">Recommendations</h2>
+      <h2 class="section-title">Recommendations</h2>
       <p>Each roommate can contribute recommendations for their favorite local restaurants, bars, services, and entertainment in the neighborhood. This helps new roommates discover the area.</p>
     </div>
   </section>
@@ -258,7 +288,7 @@
   <!-- Contact Section -->
   <section id="contact" class="py-5">
     <div class="container">
-      <h2 class="mb-4">Contact Us</h2>
+      <h2 class="section-title">Contact Us</h2>
       <div class="row">
         <div class="col-md-6">
           <form>
@@ -291,8 +321,8 @@
   </section>
 
   <!-- Footer Section -->
-  <footer class="py-4 bg-dark text-white">
-    <div class="container text-center">
+  <footer class="footer text-center">
+    <div class="container">
       <p>&copy; 2023 Room Rental Company. All rights reserved.</p>
     </div>
   </footer>
@@ -302,7 +332,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
-
-</html>
 
 </html>
