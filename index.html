@@ -15,21 +15,9 @@
 
   <script>
     const languages = {
-      en: {
-        translation: {
-          title: "Welcome"
-        }
-      },
-      es: {
-        translation: {
-          title: "Bienvenida"
-        }
-      },
-      fr: {
-        translation: {
-          title: "Bienvenue"
-        }
-      }
+      en: { translation: { title: "Welcome" } },
+      es: { translation: { title: "Bienvenida" } },
+      fr: { translation: { title: "Bienvenue" } }
     };
 
     let currentLanguage = 'en';
@@ -43,74 +31,38 @@
       document.querySelector('#title').innerText = languages[currentLanguage].translation.title;
     }
 
-    translatePage(); 
+    translatePage();
   </script>
-
 </head>
 
 <body>
-    <!-- Boot cv -->
-
-<script type="module">
+  <!-- Chatbot Integration -->
+  <script type="module">
     import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
     Chatbot.init({
-        chatflowid: "183745c3-31fa-4577-a082-d3bdc7185984",
-        apiHost: "https://flowise-wfdq.onrender.com",
+      chatflowid: "183745c3-31fa-4577-a082-d3bdc7185984",
+      apiHost: "https://flowise-wfdq.onrender.com",
     })
-</script>
+  </script>
 
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
     <div class="container">
       <h1 class="display-4">Welcome to Roommates</h1>
     </div>
-
-
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon">
-        <W /span>
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#welcome">Welcome</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact-list">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#apartment-map">Apartment</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#neighborhood-guide">Neighborhood</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#city-guide">City</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#forum">Message</a>
-        </li>
-
-
-        <li class="nav-item">
-          <a class="nav-link" href="#photo-gallery">Gallery</a>
-        </li>
-        <!--
-        <li class="nav-item">
-
-        <a href="/en" onclick="changeLanguage('en')">English</a> 
-      </li>
-      <li class="nav-item">
-        <a href="/es" onclick="changeLanguage('es')">Spanish</a> 
-      </li>
-      <li class="nav-item">
-        <a href="/fr" onclick="changeLanguage('fr')">French</a> 
-      </li>
- -->
+        <li class="nav-item active"><a class="nav-link" href="#welcome">Welcome</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact-list">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="#apartment-map">Apartment</a></li>
+        <li class="nav-item"><a class="nav-link" href="#neighborhood-guide">Neighborhood</a></li>
+        <li class="nav-item"><a class="nav-link" href="#city-guide">City</a></li>
+        <li class="nav-item"><a class="nav-link" href="#forum">Message</a></li>
+        <li class="nav-item"><a class="nav-link" href="#photo-gallery">Gallery</a></li>
       </ul>
     </div>
   </nav>
@@ -120,91 +72,22 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <p>
-
           <p style="font-size: 18px; line-height: 1.5; font-family: Arial, sans-serif; color: #333333;">
-            Welcome to our sunny room for rent in Valencia, Spain! We are excited to offer you a <strong>comfortable and
-              functional living space</strong> that combines convenience, compromise and location.
+            Welcome to our sunny room for rent in Valencia, Spain! We are excited to offer you a <strong>comfortable and functional living space</strong> that combines convenience, compromise and location.
             <br><br>
-            As your hosts, we take great pride in ensuring that our living space is <strong>clean</strong>,
-            <strong>well-maintained</strong>, and equipped with all the necessary amenities to make your stay enjoyable.
-            Here are some important things you should know:
+            As your hosts, we take great pride in ensuring that our living space is <strong>clean</strong>, <strong>well-maintained</strong>, and equipped with all the necessary amenities to make your stay enjoyable. Here are some important things you should know:
             <br><br>
-            <strong>House Rules:</strong> We have established some basic house rules to ensure that all our tenants can
-            live comfortably and peacefully. These include noise rules, respect for common areas, and other guidelines
-            to maintain a pleasant living environment.
+            <strong>House Rules:</strong> We have established some basic house rules to ensure that all our tenants can live comfortably and peacefully. These include noise rules, respect for common areas, and other guidelines to maintain a pleasant living environment.
             <br><br>
-            <strong>Rent and Bill Due Dates:</strong> We understand that paying rent and bills on time is important.
-            Therefore, we have provided clear due dates to help you manage your finances and avoid any late fees.
+            <strong>Rent and Bill Due Dates:</strong> We understand that paying rent and bills on time is important. Therefore, we have provided clear due dates to help you manage your finances and avoid any late fees.
             <br><br>
-            <strong>Cleaning Schedule:</strong> We believe that cleanliness is key to a comfortable living space. That's
-            why we have established a cleaning schedule to ensure that all common areas are kept clean and tidy.
+            <strong>Cleaning Schedule:</strong> We believe that cleanliness is key to a comfortable living space. That's why we have established a cleaning schedule to ensure that all common areas are kept clean and tidy.
             <br><br>
-            In addition to these important details, we offer a range of amenities to make your stay comfortable and
-            convenient. These include high-speed internet and Wi-Fi, secure locks on all doors, functioning smoke and
-            carbon monoxide detectors, a comfortable bed and mattress, good lighting, and comfortable furniture. We also
-            provide an option to get a parking space and on-site laundry facilities.
+            In addition to these important details, we offer a range of amenities to make your stay comfortable and convenient. These include high-speed internet and Wi-Fi, secure locks on all doors, functioning smoke and carbon monoxide detectors, a comfortable bed and mattress, good lighting, and comfortable furniture. We also provide an option to get a parking space and on-site laundry facilities.
             <br><br>
-            Our living space is located in the heart of Valencia, just minutes away from the beach and the city's top
-            universities. It is the perfect location for students and beach lovers alike.
+            Our living space is located in the heart of Valencia, just minutes away from the beach and the city's top universities. It is the perfect location for students and beach lovers alike.
             <br><br>
-            We invite you to <strong>contact us today to schedule a tour</strong> and live your dream life in sunny
-            Valencia, Spain!
-          </p>
-
-          - House rules: Normas de la casa / House rules / Règles de la maison
-          - Rent and bill due dates: Fechas de vencimiento de alquiler y facturas / Rent and bill due dates / Dates
-          d'échéance du loyer et des factures
-          - Cleaning schedule: Horario de limpieza / Cleaning schedule / Horaire de nettoyage
-
-          A welcome message greeting the roommates and any house rules or important information they should know. Things
-          like rent due dates, cleaning schedules, noise rules, etc. You can include photos of the apartment and
-          roommates here too.
-
-          Sunny Room for Rent - Live the Dream!
-
-          Are you looking for a living space that combines comfort, convenience, and location?
-          Look no further! Our sunny room for rent has everything you need to live your dream life.
-
-          We know that cleanliness is important to our tenants.
-          That's why we ensure that the living space is clean and well-maintained.
-          You can relax and enjoy your living space .
-
-          We understand that safety is a top priority for our tenants.
-          We have installed secure locks on all doors , functioning smoke detectors, and carbon monoxide detectors
-          to ensure that you feel safe and secure in your living space.
-
-          We understand that privacy is important to our tenants.
-          The room is private and spacious, providing you with a peaceful and relaxing environment after a long day.
-
-          We believe in providing our tenants with a comfortable and functional living space.
-          The room is equipped with a comfortable bed and mattress, good lighting, and comfortable furniture.
-          The heating and cooling system is adequate to ensure that you are comfortable all year round.
-
-          Our living space is located in the heart of sunny Valencia, Spain.
-          It is just minutes away from the beach and the city's top universities, making it the perfect location for
-          students and beach lovers alike.
-
-          In addition to these features, our room for rent also includes:
-          Internet and Wi-Fi:
-          Staying connected is important in today's world. We offer high-speed internet and Wi-Fi access to all our
-          tenants to make sure you are always connected.
-
-          We understand the importance of having a designated parking space for your vehicle.
-          We provide a option to get additionally a parking space for all our tenants.
-
-          We understand that laundry can be a hassle. That's why we offer on-site laundry facilities for your
-          convenience and a big terrace to put the clods.
-
-
-
-          Don't miss out on this fantastic living space!
-          Contact us today to schedule a tour and live your dream life in sunny Valencia, Spain.
-          Our living space is designed to provide you with a comfortable, convenient, and affordable living space that
-          you can call home.
-
-
-
+            We invite you to <strong>contact us today to schedule a tour</strong> and live your dream life in sunny Valencia, Spain!
           </p>
         </div>
         <div class="col-md-6">
@@ -228,9 +111,7 @@
             <img src="https://via.placeholder.com/400x300" alt="Room Image" class="card-img-top">
             <div class="card-body">
               <h5 class="card-title">Room 1</h5>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor interdum
-                purus, sed pulvinar erat molestie non. Sed et elit elit. Ut vel bibendum tellus, quis dignissim nisl.
-              </p>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor interdum purus, sed pulvinar erat molestie non. Sed et elit elit. Ut vel bibendum tellus, quis dignissim nisl.</p>
               <a href="#" class="btn btn-primary">Book Now</a>
             </div>
           </div>
@@ -239,374 +120,329 @@
           <div class="card">
             <img src="https://via.placeholder.com/400x300" alt="Room Image" class="card-img-top">
             <div class="card-body">
-              <h5 class="card-title">
-
-
-                Room 2</h5>
-
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor interdum
-                purus, sed pulvinar erat molestie non. Sed et elit elit. Ut vel bibendum tellus, quis dignissim nisl.
-              </p>
-
+              <h5 class="card-title">Room 2</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor interdum purus, sed pulvinar erat molestie non. Sed et elit elit. Ut vel bibendum tellus, quis dignissim nisl.</p>
               <a href="#" class="btn btn-primary">Book Now</a>
-
             </div>
-
           </div>
-
         </div>
-
         <div class="col-md-3">
-
           <div class="card">
-
             <img src="https://via.placeholder.com/400x300" alt="Room Image" class="card-img-top">
-
             <div class="card-body">
-
               <h5 class="card-title">Room 3</h5>
-
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor interdum
-                purus, sed pulvinar erat molestie non. Sed et elit elit. Ut vel bibendum tellus, quis dignissim nisl.
-              </p>
-
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor interdum purus, sed pulvinar erat molestie non. Sed et elit elit. Ut vel bibendum tellus, quis dignissim nisl.</p>
               <a href="#" class="btn btn-primary">Book Now</a>
-
             </div>
-
           </div>
-
         </div>
         <div class="col-md-3">
-
           <div class="card">
-
             <img src="https://via.placeholder.com/400x300" alt="Room Image" class="card-img-top">
-
             <div class="card-body">
-
               <h5 class="card-title">Room 4</h5>
-
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor interdum
-                purus, sed pulvinar erat molestie non. Sed et elit elit. Ut vel bibendum tellus, quis dignissim nisl.
-              </p>
-
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tempor interdum purus, sed pulvinar erat molestie non. Sed et elit elit. Ut vel bibendum tellus, quis dignissim nisl.</p>
               <a href="#" class="btn btn-primary">Book Now</a>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-
+  <!-- Contact List Section -->
   <section id="contact-list">
-    <h2> Lista de contactos / Contact list / Liste de contacts </h2>
-
-
-    <table
-      style="border-collapse: collapse; width: 100%; font-size: 16px; font-family: Arial, sans-serif; margin-top: 20px;">
-      <thead style="background-color: #f2f2f2;">
-        <tr>
-          <th style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Important Phone Numbers</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Internet: llamar al 1706 o WhatsApp
-            página de pepephone +34 623 03 34 98
-          </td>
-        </tr>
-        <tr>
-          <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Fontanero: [insert phone number here]
-          </td>
-        </tr>
-        <tr>
-          <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Cerrajero: [insert phone number here]
-          </td>
-        </tr>
-        <tr>
-          <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Bomberos, Urgencias y Emergencias: 112</td>
-        </tr>
-        <tr>
-          <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Policía Local: 092</td>
-        </tr>
-        <tr>
-          <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Policía Nacional: 091</td>
-        </tr>
-        <tr>
-          <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Teléfono Ciudadano: 010</td>
-        </tr>
-        <tr>
-          <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Información Generalitat: 012</td>
-        </tr>
-        <tr>
-          <td style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Violencia de Género: 016</td>
-        </tr>
-      </tbody>
-    </table>
-
-
-    - Roommate names, phones and emails: Nombres de compañeros de piso, teléfonos y correos electrónicos / Roommate
-    names, phones and emails / Noms des colocataires, téléphones et e-mails
-    - Emergency contacts: Contactos de emergencia / Emergency contacts / Contacts d'urgence
-
-    Internet: llamar al 1706 o WhatsApp página de pepephone +34 623 03 34 98
-    
-    <br></br>
-
-
-  </section>
-
-  <section id="links">
-
-    <h2> Links </h2>
-    <a href="https://www.valencia.es/es/-/tel%C3%A9fonos-de-urgencia-en-la-ciudad-de-valencia"
-      style="font-size: 16px; font-family: [Arial](poe://www.poe.com/_api/key_phrase?phrase=Arial&prompt=Tell%20me%20more%20about%20Arial.), sans-serif; color: #0066cc; text-decoration: none;">Teléfonos
-      contacto Ayuntamiento de Valencia</a>
-
-   
-    <br></br>
-
-  </section>
-
-  <section id="apartment-map">
-
-    <h2> Mapa del apartamento / Apartment map / Plan de l'appartement </h2>
-
-
-    - Interactive map showing: Mapa interactivo que muestra / Interactive map showing / Carte interactive montrant
-    - Rooms: Habitaciones / Rooms / Chambres
-    - Bathrooms: Baños / Bathrooms / Salles de bain
-    - Kitchen: Cocina / Kitchen / Cuisine
-    - Living room: Salón / Living room / Salon
-    - Exits: Salidas / Exits / Sorties
-    - Thermostats: Termostatos / Thermostats / Thermostats
-    - Descriptions and rules for each room: Descripciones y reglas para cada habitación / Descriptions and rules for
-    each room / Descriptions et règles pour chaque pièce
-
-
-
-    a map of the apartment layout showing locations of rooms, bathrooms, kitchen, living room, exits, thermostats, etc.
-
-    toma general de agua, toma general de luz, tendedero de arriba misma llave,
-    tomas de agua y luz de la finca,
-    <br></br>
-  </section>
-
-  <section id="neighborhood-guide">
-    <h2> Neighborhood guide </h2>
-
-    A page with an interactive map of the surrounding neighborhood marking locations of nearby points of interest like
-    grocery stores, restaurants, laundromats, hospitals, public transit stops, etc. Provide addresses, contact info and
-    walking directions to each location.
-
-    Neighborhood guide:
-    Guía del vecindario / Neighborhood guide / Guide du quartier
-    - Interactive map of nearby places: Mapa interactivo de lugares cercanos / Interactive map of nearby places / Carte
-    interactive des lieux à proximité
-    - Grocery stores: Supermercados / Grocery stores / Épiceries
-    - Restaurants: Restaurantes / Restaurants / Restaurants
-    - Laundromats: Lavanderías / Laundromats / Laveries
-    - Hospitals: Hospitales / Hospitals / Hôpitaux
-    - Public transit stops: Paradas de transporte público / Public transit stops / Arrêts de transport public
-    - Address, contact and walking directions for each location: Dirección, contacto y direcciones para caminar a cada
-    ubicación / Address, contact and walking directions for each location / Adresse, contact et directions pour marcher
-    à chaque emplacement
-
-    <br></br>
-
-  </section>
-
-  <section id="city-guide">
-    <h2> City guide </h2>
-
- 
-      <img src="https://i.pinimg.com/736x/4b/4e/de/4b4edee0ddf1f30a15968ebb62490866--valencia.jpg" alt="About Us Image" class="img-fluid">
-  
-
-    
-
-    https://www.visitvalencia.com/planifica-tu-viaje-a-valencia/planos-y-guias-turisticas-valencia/folletos-turisticos
-
-    http://www.valencia-cityguide.com/es/guia-de-turismo/mapas-para-descargar/
-
-
-    https://multimedia.comunitatvalenciana.com/45D3B1C978FD4EF5ACE0186B77B2B72C/doc/5102A847E5B6428B8DAFF4F604F93F51/PLANO_VALENCIA_2020_ESP-EN.pdf
-
-
-    A wider map of the entire city showing major landmarks, attractions, and routes to get to various parts of the city.
-    Highlight any important locations for the roommates like school campuses or workplaces. Provide an overview of
-    public transit options like buses, trains, bike sharing, etc.
-
-    A way for the roommates to communicate any suggestions annonimally in one place. Provide the option to privately
-    message individuals as well.
-    :
-    Guía de la ciudad / City guide / Guide de la ville
-    - Map of city showing attractions and transit options: Mapa de la ciudad que muestra atracciones y opciones de
-    tránsito / Map of city showing attractions and transit options / Carte de la ville montrant attractions et options
-    de transit
-    - Major landmarks: Principales lugares de interés / Major landmarks / Principaux monuments
-    - Attractions: Atracciones / Attractions / Attractions
-    - Buses: Autobuses / Buses / Bus
-    - Trains: Trenes / Trains / Trains
-    - Bike sharing: Compartición de bicicletas / Bike sharing / Partage de vélos
-    - Important locations for roommates: Ubicaciones importantes para los compañeros de piso / Important locations for
-    roommates / Emplacements importants pour les colocataires
-    <br></br>
-
-  </section>
-
-  <section id="forum">
-    <h2> Foro / Message board / Forum </h2>
-
-    Forum/Message board:
-
-    - Discuss issues, questions or suggestions: Discutir problemas, preguntas o sugerencias / Discuss issues, questions
-    or suggestions / Discuter des problèmes, des questions ou des suggestions
-    - Private messaging option: Opción de mensajería privada / Private messaging option / Option de messagerie privée
-    <br></br>
-
-  </section>
-
-  <section id="photo-gallery">
-    <h2> Galería de fotos / Photo gallery / Galerie </h2>
-
-    Galería de fotos / Photo gallery / Galerie
-    <br></br>
-
-  </section>
-  <section id="recommendations">
-    <h2> Recommendations </h2>
-
-    Each roommate can contribute recommendations for their favorite local restaurants, bars, services and entertainment
-    in the neighborhood. This helps new roommates discover the area.
-    <br></br>
-
-  </section>
-  <!-- Contact Section -->
-
-  <section id="contact">
-
     <div class="container">
-
-      <div class="row">
-
-        <div class="col-md-12">
-
-          <h2>Contact Us</h2>
-
-        </div>
-
-      </div>
-
-      <div class="row">
-
-        <div class="col-md-6">
-
-          <form>
-
-            <div class="form-group">
-
-              <label for="name">Name</label>
-
-              <input type="text" class="form-control" id="name" placeholder="Enter your name">
-
-            </div>
-
-            <div class="form-group">
-
-              <label for="email">Email address</label>
-
-              <input type="email" class="form-control" id="email" placeholder="Enter your email">
-
-            </div>
-
-            <div class="form-group">
-
-              <label for="message">Message</label>
-
-              <textarea class="form-control" id="message" rows="5"></textarea>
-
-            </div>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
-
-          </form>
-
-        </div>
-
-        <div class="col-md-6">
-
-          <h3>Location</h3>
-
-          <p>123 Main St.</p>
-
-          <p>Anytown, USA 12345</p>
-
-          <h3>Phone</h3>
-
-          <p>(123) 456-7890</p>
-
-          <h3>Email</h3>
-
-          <p>info@roomrentalcompany.com</p>
-
-        </div>
-
-      </div>
-
+      <h2>Lista de contactos / Contact list / Liste de contacts</h2>
+      <table class="table table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th>Important Phone Numbers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Internet: llamar al 1706 o WhatsApp página de pepephone +34 623 03 34 98</td></tr>
+          <tr><td>Fontanero: [insert phone number here]</td></tr>
+          <tr><td>Cerrajero: [insert phone number here]</td></tr>
+          <tr><td>Bomberos, Urgencias y Emergencias: 112</td></tr>
+          <tr><td>Policía Local: 092</td></tr>
+          <tr><td>Policía Nacional: 091</td></tr>
+          <tr><td>Teléfono Ciudadano: 010</td></tr>
+          <tr><td>Información Generalitat: 012</td></tr>
+          <tr><td>Violencia de Género: 016</td></tr>
+        </tbody>
+      </table>
     </div>
-    <br></br>
-
   </section>
 
+  <!-- Links Section -->
+  <section id="links">
+    <div class="container">
+      <h2>Links</h2>
+      <a href="https://www.valencia.es/es/-/tel%C3%A9fonos-de-urgencia-en-la-ciudad-de-valencia" class="link">Teléfonos contacto Ayuntamiento de Valencia</a>
+    </div>
+  </section>
 
+  <!-- Apartment Map Section -->
+  <section id="apartment-map">
+    <div class="container">
+      <h2>Mapa del apartamento / Apartment map / Plan de l'appartement</h2>
+      <p>Interactive map showing:</p>
+      <ul>
+        <li>Rooms: Habitaciones / Rooms / Chambres</li>
+        <li>Bathrooms: Baños / Bathrooms / Salles de bain</li>
+        <li>Kitchen: Cocina / Kitchen / Cuisine</li>
+        <li>Living room: Salón / Living room / Salon</li>
+        <li>Exits: Salidas / Exits / Sorties</li>
+        <li>Thermostats: Termostatos / Thermostats / Thermostats</li>
+        <li>Descriptions and rules for each room: Descripciones y reglas para cada habitación / Descriptions and rules for each room / Descriptions et règles pour chaque pièce</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Neighborhood Guide Section -->
+  <section id="neighborhood-guide">
+    <div class="container">
+      <h2>Neighborhood guide</h2>
+      <p>Interactive map of nearby places:</p>
+      <ul>
+        <li>Grocery stores: Supermercados / Grocery stores / Épiceries</li>
+        <li>Restaurants: Restaurantes / Restaurants / Restaurants</li>
+        <li>Laundromats: Lavanderías / Laundromats / Laveries</li>
+        <li>Hospitals: Hospitales / Hospitals / Hôpitaux</li>
+        <li>Public transit stops: Paradas de transporte público / Public transit stops / Arrêts de transport public</li>
+        <li>Address, contact and walking directions for each location: Dirección, contacto y direcciones para caminar a cada ubicación / Address, contact and walking directions for each location / Adresse, contact et directions pour marcher à chaque emplacement</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- City Guide Section -->
+  <section id="city-guide">
+    <div class="container">
+      <h2>City guide</h2>
+      <img src="https://i.pinimg.com/736x/4b/4e/de/4b4edee0ddf1f30a15968ebb62490866--valencia.jpg" alt="City Image" class="img-fluid">
+      <p>Map of city showing attractions and transit options:</p>
+      <ul>
+        <li>Major landmarks: Principales lugares de interés / Major landmarks / Principaux monuments</li>
+        <li>Attractions: Atracciones / Attractions / Attractions</li>
+        <li>Buses: Autobuses / Buses / Bus</li>
+        <li>Trains: Trenes / Trains / Trains</li>
+        <li>Bike sharing: Compartición de bicicletas / Bike sharing / Partage de vélos</li>
+        <li>Important locations for roommates: Ubicaciones importantes para los compañeros de piso / Important locations for roommates / Emplacements importants pour les colocataires</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Forum Section -->
+  <section id="forum">
+    <div class="container">
+      <h2>Foro / Message board / Forum</h2>
+      <p>Discuss issues, questions or suggestions:</p>
+      <ul>
+        <li>Private messaging option: Opción de mensajería privada / Private messaging option / Option de messagerie privée</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Photo Gallery Section -->
+  <section id="photo-gallery">
+    <div class="container">
+      <h2>Galería de fotos / Photo gallery / Galerie</h2>
+    </div>
+  </section>
+
+  <!-- Recommendations Section -->
+  <section id="recommendations">
+    <div class="container">
+      <h2>Recommendations</h2>
+      <p>Each roommate can contribute recommendations for their favorite local restaurants, bars, services and entertainment in the neighborhood. This helps new roommates discover the area.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Contact Us</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h3>Location</h3>
+          <p>123 Main St.</p>
+          <p>Anytown, USA 12345</p>
+          <h3>Phone</h3>
+          <p>(123) 456-7890</p>
+          <h3>Email</h3>
+          <p>info@roomrentalcompany.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Footer Section -->
-
   <footer>
-
     <div class="container">
-
       <div class="row">
-
         <div class="col-md-12">
-
           <p>&copy; 2023 Room Rental Company. All rights reserved.</p>
-
         </div>
-
       </div>
-
     </div>
-
   </footer>
 
   <!-- jQuery and Bootstrap JS -->
-
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-
 </body>
 
 </html>
 
 
-<!-- Bootstrap CSS -->
+  <section id="contact-list">
+    <h2>Lista de contactos / Contact list / Liste de contacts</h2>
+    <table class="table table-bordered">
+      <thead class="thead-light">
+        <tr>
+          <th>Important Phone Numbers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Internet: llamar al 1706 o WhatsApp página de pepephone +34 623 03 34 98</td></tr>
+        <tr><td>Fontanero: [insert phone number here]</td></tr>
+        <tr><td>Cerrajero: [insert phone number here]</td></tr>
+        <tr><td>Bomberos, Urgencias y Emergencias: 112</td></tr>
+        <tr><td>Policía Local: 092</td></tr>
+        <tr><td>Policía Nacional: 091</td></tr>
+        <tr><td>Teléfono Ciudadano: 010</td></tr>
+        <tr><td>Información Generalitat: 012</td></tr>
+        <tr><td>Violencia de Género: 016</td></tr>
+      </tbody>
+    </table>
+  </section>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <section id="links">
+    <h2>Links</h2>
+    <a href="https://www.valencia.es/es/-/tel%C3%A9fonos-de-urgencia-en-la-ciudad-de-valencia" class="link">Teléfonos contacto Ayuntamiento de Valencia</a>
+  </section>
 
-<!-- Font Awesome -->
+  <section id="apartment-map">
+    <h2>Mapa del apartamento / Apartment map / Plan de l'appartement</h2>
+    <p>Interactive map showing:</p>
+    <ul>
+      <li>Rooms: Habitaciones / Rooms / Chambres</li>
+      <li>Bathrooms: Baños / Bathrooms / Salles de bain</li>
+      <li>Kitchen: Cocina / Kitchen / Cuisine</li>
+      <li>Living room: Salón / Living room / Salon</li>
+      <li>Exits: Salidas / Exits / Sorties</li>
+      <li>Thermostats: Termostatos / Thermostats / Thermostats</li>
+      <li>Descriptions and rules for each room: Descripciones y reglas para cada habitación / Descriptions and rules for each room / Descriptions et règles pour chaque pièce</li>
+    </ul>
+  </section>
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <section id="neighborhood-guide">
+    <h2>Neighborhood guide</h2>
+    <p>Interactive map of nearby places:</p>
+    <ul>
+      <li>Grocery stores: Supermercados / Grocery stores / Épiceries</li>
+      <li>Restaurants: Restaurantes / Restaurants / Restaurants</li>
+      <li>Laundromats: Lavanderías / Laundromats / Laveries</li>
+      <li>Hospitals: Hospitales / Hospitals / Hôpitaux</li>
+      <li>Public transit stops: Paradas de transporte público / Public transit stops / Arrêts de transport public</li>
+      <li>Address, contact and walking directions for each location: Dirección, contacto y direcciones para caminar a cada ubicación / Address, contact and walking directions for each location / Adresse, contact et directions pour marcher à chaque emplacement</li>
+    </ul>
+  </section>
+
+  <section id="city-guide">
+    <h2>City guide</h2>
+    <img src="https://i.pinimg.com/736x/4b/4e/de/4b4edee0ddf1f30a15968ebb62490866--valencia.jpg" alt="City Image" class="img-fluid">
+    <p>Map of city showing attractions and transit options:</p>
+    <ul>
+      <li>Major landmarks: Principales lugares de interés / Major landmarks / Principaux monuments</li>
+      <li>Attractions: Atracciones / Attractions / Attractions</li>
+      <li>Buses: Autobuses / Buses / Bus</li>
+      <li>Trains: Trenes / Trains / Trains</li>
+      <li>Bike sharing: Compartición de bicicletas / Bike sharing / Partage de vélos</li>
+      <li>Important locations for roommates: Ubicaciones importantes para los compañeros de piso / Important locations for roommates / Emplacements importants pour les colocataires</li>
+    </ul>
+  </section>
+
+  <section id="forum">
+    <h2>Foro / Message board / Forum</h2>
+    <p>Discuss issues, questions or suggestions:</p>
+    <ul>
+      <li>Private messaging option: Opción de mensajería privada / Private messaging option / Option de messagerie privée</li>
+    </ul>
+  </section>
+
+  <section id="photo-gallery">
+    <h2>Galería de fotos / Photo gallery / Galerie</h2>
+  </section>
+
+  <section id="recommendations">
+    <h2>Recommendations</h2>
+    <p>Each roommate can contribute recommendations for their favorite local restaurants, bars, services and entertainment in the neighborhood. This helps new roommates discover the area.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <form>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea class="form-control" id="message" rows="5"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <h3>Location</h3>
+        <p>123 Main St.</p>
+        <p>Anytown, USA 12345</p>
+        <h3>Phone</h3>
+        <p>(123) 456-7890</p>
+        <h3>Email</h3>
+        <p>info@roomrentalcompany.com</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Room Rental Company. All rights reserved.</p>
+  </footer>
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
