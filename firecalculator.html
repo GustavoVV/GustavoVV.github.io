@@ -7,7 +7,7 @@
     <title>Financial Independence Calculator</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.2"></script>
@@ -63,14 +63,21 @@
         .mt-3 {
             margin-top: 1rem !important;
         }
+
         .d-inline-block {
             display: inline-block;
         }
 
         .w-auto {
             width: auto;
-}
+        }
 
+        @media (max-width: 768px) {
+            .col-md-6 {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -84,21 +91,20 @@
                 <form id="financialForm1" class="mt-4">
                     <div class="form-group">
                         <label for="age1" title="Enter your current age">Age</label>
-                        <input type="number" class="form-control" id="age1" value="18">
+                        <input type="number" class="form-control" id="age1" value="18" aria-label="Current age">
                     </div>
                     <div class="form-group">
                         <label for="income1" title="Enter your annual income after taxes">Income (after tax)</label>
-                        <input type="number" class="form-control" id="income1" value="40000">
+                        <input type="number" class="form-control" id="income1" value="40000" aria-label="Current income after tax">
                     </div>
                     <div class="form-group">
                         <label for="spending1" title="Enter your annual spending">Spending</label>
-                        <input type="number" class="form-control" id="spending1" value="14000">
+                        <input type="number" class="form-control" id="spending1" value="14000" aria-label="Current annual spending">
                     </div>
                     <div class="form-group">
                         <label for="investments1" title="Enter the current value of your investments">Current Investments</label>
-                        <input type="number" class="form-control" id="investments1" value="20000">
+                        <input type="number" class="form-control" id="investments1" value="20000" aria-label="Current investments value">
                     </div>
-
                 </form>
             </div>
             <div class="col-md-6">
@@ -106,27 +112,27 @@
                 <form id="financialForm2" class="mt-4">
                     <div class="form-group">
                         <label for="age2" title="Enter your modified scenario age">Age</label>
-                        <input type="number" class="form-control" id="age2" value="18">
+                        <input type="number" class="form-control" id="age2" value="18" aria-label="Modified age">
                     </div>
                     <div class="form-group">
                         <label for="income2" title="Enter your modified scenario annual income after taxes">Income (after tax)</label>
-                        <input type="number" class="form-control" id="income2" value="60000">
+                        <input type="number" class="form-control" id="income2" value="60000" aria-label="Modified income after tax">
                     </div>
                     <div class="form-group">
                         <label for="spending2" title="Enter your modified scenario annual spending">Spending</label>
-                        <input type="number" class="form-control" id="spending2" value="25000">
+                        <input type="number" class="form-control" id="spending2" value="25000" aria-label="Modified annual spending">
                     </div>
                     <div class="form-group">
                         <label for="investments2" title="Enter the current value of your investments in the modified scenario">Current Investments</label>
-                        <input type="number" class="form-control" id="investments2" value="20000">
+                        <input type="number" class="form-control" id="investments2" value="20000" aria-label="Modified investments value">
                     </div>
-
                 </form>
             </div>
         </div>
         <div class="text-center mt-3">
             <div class="form-group d-inline-block">
-                <label for="annualReturn" class="d-block" title="Expected annual return on investments as a percentage">Annual Return (%)</label>                <input type="number" class="form-control d-inline-block w-auto" id="annualReturn" name="annualReturn" value="7" step="0.01" min="0" max="100">
+                <label for="annualReturn" class="d-block" title="Expected annual return on investments as a percentage">Annual Return (%)</label>
+                <input type="number" class="form-control d-inline-block w-auto" id="annualReturn" name="annualReturn" value="7" step="0.01" min="0" max="100" aria-label="Annual return percentage">
             </div>
             <button type="button" class="btn btn-primary mt-3 d-inline-block" onclick="calculate()">Calculate</button>
         </div>
@@ -140,14 +146,12 @@
 
     <script>
         function calculate() {
-            const getValues = (prefix) => {
-                return {
-                    age: parseFloat(document.getElementById(`age${prefix}`).value),
-                    initialIncome: parseFloat(document.getElementById(`income${prefix}`).value),
-                    spending: parseFloat(document.getElementById(`spending${prefix}`).value),
-                    investments: parseFloat(document.getElementById(`investments${prefix}`).value),
-                };
-            };
+            const getValues = (prefix) => ({
+                age: parseFloat(document.getElementById(`age${prefix}`).value),
+                initialIncome: parseFloat(document.getElementById(`income${prefix}`).value),
+                spending: parseFloat(document.getElementById(`spending${prefix}`).value),
+                investments: parseFloat(document.getElementById(`investments${prefix}`).value),
+            });
 
             const values1 = getValues(1);
             const values2 = getValues(2);
@@ -158,16 +162,12 @@
                 let years = [];
                 let savings = [];
                 let totalSavings = values.investments;
-                let annualReturn = parseFloat(document.getElementById('annualReturn').value) / 100.0;
-
-
-
-                let income = values.initialIncome;
+                const annualReturn = parseFloat(document.getElementById('annualReturn').value) / 100.0;
 
                 for (let i = 0; i <= 30; i++) {
                     years.push(values.age + i);
                     savings.push(totalSavings);
-                    totalSavings += (income * savingsRate) + (totalSavings * annualReturn);
+                    totalSavings += (values.initialIncome * savingsRate) + (totalSavings * annualReturn);
                 }
                 return { years, savings, fireTarget };
             };
@@ -253,7 +253,7 @@
                                     type: 'line',
                                     mode: 'vertical',
                                     scaleID: 'x',
-                                    value: currentFreedomYear-values1.age,
+                                    value: currentFreedomYear - values1.age,
                                     borderColor: 'rgba(54, 162, 235, 0.5)',
                                     borderWidth: 2,
                                     label: {
@@ -266,7 +266,7 @@
                                     type: 'line',
                                     mode: 'vertical',
                                     scaleID: 'x',
-                                    value: modifiedFreedomYear -values2.age,
+                                    value: modifiedFreedomYear - values2.age,
                                     borderColor: 'rgba(255, 206, 86, 0.5)',
                                     borderWidth: 2,
                                     label: {
