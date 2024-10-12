@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerta de Ruletas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #alertas {
+            color: red;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .ruleta {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ruletas: Alerta de Patrones</h1>
+    <p>Introduce los números de cada ruleta a continuación:</p>
+
+    <!-- Controles para cada ruleta -->
+    <div id="ruleta1" class="ruleta">
+        <h3>Ruleta 1</h3>
+        <label for="numeroInput1">Número: </label>
+        <input type="number" id="numeroInput1" min="0" max="36">
+        <button onclick="agregarNumero(1)">Agregar Número</button>
+        <p>Secuencia actual: <span id="numeros1"></span></p>
+    </div>
+
+    <div id="ruleta2" class="ruleta">
+        <h3>Ruleta 2</h3>
+        <label for="numeroInput2">Número: </label>
+        <input type="number" id="numeroInput2" min="0" max="36">
+        <button onclick="agregarNumero(2)">Agregar Número</button>
+        <p>Secuencia actual: <span id="numeros2"></span></p>
+    </div>
+
+    <div id="ruleta3" class="ruleta">
+        <h3>Ruleta 3</h3>
+        <label for="numeroInput3">Número: </label>
+        <input type="number" id="numeroInput3" min="0" max="36">
+        <button onclick="agregarNumero(3)">Agregar Número</button>
+        <p>Secuencia actual: <span id="numeros3"></span></p>
+    </div>
+
+    <div id="ruleta4" class="ruleta">
+        <h3>Ruleta 4</h3>
+        <label for="numeroInput4">Número: </label>
+        <input type="number" id="numeroInput4" min="0" max="36">
+        <button onclick="agregarNumero(4)">Agregar Número</button>
+        <p>Secuencia actual: <span id="numeros4"></span></p>
+    </div>
+
+    <h3>Alertas:</h3>
+    <div id="alertas"></div>
+
+    <script>
+        const ruletas = {
+            1: [],
+            2: [],
+            3: [],
+            4: []
+        };
+        
+        const docenas = {
+            "1": [1, 12],
+            "2": [13, 24],
+            "3": [25, 36]
+        };
+
+        const columnas = {
+            "1": [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34],
+            "2": [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35],
+            "3": [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36]
+        };
+
+        function agregarNumero(ruleta) {
+            const numeroInputId = `numeroInput${ruleta}`;
+            const numero = parseInt(document.getElementById(numeroInputId).value);
+            if (numero >= 0 && numero <= 36) {
+                ruletas[ruleta].push(numero);
+                document.getElementById(`numeros${ruleta}`).innerText = ruletas[ruleta].join(", ");
+                verificarAlertas(ruleta);
+            } else {
+                alert("Introduce un número válido entre 0 y 36.");
+            }
+        }
+
+        function verificarAlertas(ruleta) {
+            const numeros = ruletas[ruleta];
+            const alertas = [];
+
+            if (numeros.length >= 17) {
+                verificarDocenas(numeros, alertas);
+            }
+            if (numeros.length >= 6) {
+                verificarColumnas(numeros, alertas);
+            }
+            if (numeros.length >= 4) {
+                verificarSeissenas(numeros, alertas);
+            }
+            if (numeros.length >= 16) {
+                verificarCambio(numeros, alertas);
+            }
+            if (numeros.length >= 20) {
+                verificarFaltaPasa(numeros, alertas);
+            }
+            if (numeros.length >= 6) {
+                verificarNumeros12(numeros, alertas);
+            }
+            mostrarAlertas(alertas, ruleta);
+        }
+
+        function verificarDocenas(numeros, alertas) {
+            const ultimos17 = numeros.slice(-17);
+            const fueraDeDocenas = ultimos17.every(n => !(n >= 1 && n <= 36));
+            if (fueraDeDocenas) {
+                alertas.push("17 números sin caer en ninguna de las tres docenas.");
+            }
+        }
+
+        function verificarColumnas(numeros, alertas) {
+            const ultimos6 = numeros.slice(-6);
+            for (const col in columnas) {
+                if (ultimos6.every(n => columnas[col].includes(n))) {
+                    alertas.push(`6 números seguidos en la columna ${col}.`);
+                    break;
+                }
+            }
+        }
+
+        function verificarSeissenas(numeros, alertas) {
+            const ultimos4 = numeros.slice(-4);
+            if (ultimos4.every(n => n >= 13 && n <= 18) || ultimos4.every(n => n >= 19 && n <= 24)) {
+                alertas.push("4 números seguidos en una de las seisenas (13-18 o 19-24).");
+            }
+        }
+
+        function verificarCambio(numeros, alertas) {
+            const ultimos16 = numeros.slice(-16);
+            const alternancia = ultimos16.every((n, i) => {
+                const esPar = n % 2 === 0;
+                const esRojo = [1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36].includes(n);
+                const esFalta = n >= 1 && n <= 18;
+
+                return (
+                    (i % 2 === 0 && esPar) ||
+                    (i % 2 === 1 && !esPar) ||
+                    (i % 2 === 0 && esRojo) ||
+                    (i % 2 === 1 && !esRojo) ||
+                    (i % 2 === 0 && esFalta) ||
+                    (i % 2 === 1 && !esFalta)
+                );
+            });
+
+            if (alternancia) {
+                alertas.push("16 veces seguidas alternando par/impar, rojo/negro, o falta/pasa.");
+            }
+        }
+
+        function verificarFaltaPasa(numeros, alertas) {
+            const ultimos20 = numeros.slice(-20);
+            const faltas = ultimos20.filter(n => n >= 1 && n <= 18).length;
+            const pasas = ultimos20.filter(n => n >= 19 && n <= 36).length;
+
+            if (faltas >= 18 || pasas >= 18) {
+                alertas.push("18 veces seguidas o alternas en Falta o Pasa en un total de 20 números.");
+            }
+        }
+
+        function verificarNumeros12(numeros, alertas) {
+            const ultimos6 = numeros.slice(-6);
+            if (ultimos6.every(n => (n >= 10 && n <= 19) || (n >= 20 && n <= 29))) {
+                alertas.push("6 números seguidos entre 10-19 o 20-29.");
+            }
+        }
+
+        function mostrarAlertas(alertas, ruleta) {
+            const alertasDiv = document.getElementById("alertas");
+            if (alertas.length > 0) {
+                alertasDiv.innerHTML += `<p><strong>Ruleta ${ruleta}:</strong> ${alertas.join(", ")}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
