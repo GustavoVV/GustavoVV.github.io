@@ -14,8 +14,24 @@
             font-weight: bold;
             margin-top: 20px;
         }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
         .ruleta {
-            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .ruleta h3 {
+            margin-top: 0;
+        }
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -23,41 +39,47 @@
     <h1>Ruletas: Alerta de Patrones</h1>
     <p>Introduce los números de cada ruleta a continuación:</p>
 
-    <!-- Controles para cada ruleta -->
-    <div id="ruleta1" class="ruleta">
-        <h3>Ruleta 1</h3>
-        <label for="numeroInput1">Número: </label>
-        <input type="number" id="numeroInput1" min="0" max="36">
-        <button onclick="agregarNumero(1)">Agregar Número</button>
-        <p>Secuencia actual: <span id="numeros1"></span></p>
-    </div>
+    <div class="grid-container">
+        <!-- Ruleta 1 -->
+        <div id="ruleta1" class="ruleta">
+            <h3>Ruleta 1</h3>
+            <label for="numeroInput1">Número: </label>
+            <input type="number" id="numeroInput1" min="0" max="36">
+            <button onclick="agregarNumero(1)">Agregar Número</button>
+            <p>Secuencia actual: <span id="numeros1"></span></p>
+            <div id="alertas1"></div>
+        </div>
 
-    <div id="ruleta2" class="ruleta">
-        <h3>Ruleta 2</h3>
-        <label for="numeroInput2">Número: </label>
-        <input type="number" id="numeroInput2" min="0" max="36">
-        <button onclick="agregarNumero(2)">Agregar Número</button>
-        <p>Secuencia actual: <span id="numeros2"></span></p>
-    </div>
+        <!-- Ruleta 2 -->
+        <div id="ruleta2" class="ruleta">
+            <h3>Ruleta 2</h3>
+            <label for="numeroInput2">Número: </label>
+            <input type="number" id="numeroInput2" min="0" max="36">
+            <button onclick="agregarNumero(2)">Agregar Número</button>
+            <p>Secuencia actual: <span id="numeros2"></span></p>
+            <div id="alertas2"></div>
+        </div>
 
-    <div id="ruleta3" class="ruleta">
-        <h3>Ruleta 3</h3>
-        <label for="numeroInput3">Número: </label>
-        <input type="number" id="numeroInput3" min="0" max="36">
-        <button onclick="agregarNumero(3)">Agregar Número</button>
-        <p>Secuencia actual: <span id="numeros3"></span></p>
-    </div>
+        <!-- Ruleta 3 -->
+        <div id="ruleta3" class="ruleta">
+            <h3>Ruleta 3</h3>
+            <label for="numeroInput3">Número: </label>
+            <input type="number" id="numeroInput3" min="0" max="36">
+            <button onclick="agregarNumero(3)">Agregar Número</button>
+            <p>Secuencia actual: <span id="numeros3"></span></p>
+            <div id="alertas3"></div>
+        </div>
 
-    <div id="ruleta4" class="ruleta">
-        <h3>Ruleta 4</h3>
-        <label for="numeroInput4">Número: </label>
-        <input type="number" id="numeroInput4" min="0" max="36">
-        <button onclick="agregarNumero(4)">Agregar Número</button>
-        <p>Secuencia actual: <span id="numeros4"></span></p>
+        <!-- Ruleta 4 -->
+        <div id="ruleta4" class="ruleta">
+            <h3>Ruleta 4</h3>
+            <label for="numeroInput4">Número: </label>
+            <input type="number" id="numeroInput4" min="0" max="36">
+            <button onclick="agregarNumero(4)">Agregar Número</button>
+            <p>Secuencia actual: <span id="numeros4"></span></p>
+            <div id="alertas4"></div>
+        </div>
     </div>
-
-    <h3>Alertas:</h3>
-    <div id="alertas"></div>
 
     <script>
         const ruletas = {
@@ -181,9 +203,10 @@
         }
 
         function mostrarAlertas(alertas, ruleta) {
-            const alertasDiv = document.getElementById("alertas");
+            const alertasDiv = document.getElementById(`alertas${ruleta}`);
+            alertasDiv.innerHTML = ""; // Limpiar alertas anteriores
             if (alertas.length > 0) {
-                alertasDiv.innerHTML += `<p><strong>Ruleta ${ruleta}:</strong> ${alertas.join(", ")}</p>`;
+                alertasDiv.innerHTML += `<p><strong>Alertas:</strong> ${alertas.join(", ")}</p>`;
             }
         }
     </script>
