@@ -115,7 +115,13 @@
 
         function verificarAlertas(ruleta) {
             const numeros = ruletas[ruleta];
-            const alertas = [];
+
+            // Verificar que se hayan introducido al menos 6 números
+            if (numeros.length < 6) {
+                return; // No hacer nada si hay menos de 6 números
+            }
+
+            const alertas = new Set(); // Usar un conjunto para evitar alertas duplicadas
 
             if (numeros.length >= 17) {
                 verificarDocenas(numeros, alertas);
@@ -137,14 +143,20 @@
             }
             // Nueva verificación para seisena no salida
             verificarSeisenaNoSalida(numeros, alertas);
-            mostrarAlertas(alertas, ruleta);
+
+            // Nuevas alertas basadas en el pseudocódigo
+            verificarDocenaNoSalida(numeros, alertas);
+            verificarParImparSeguidos(numeros, alertas);
+            verificarFaltaPasaSeguidos(numeros, alertas);
+
+            mostrarAlertas(Array.from(alertas), ruleta); // Convertir el conjunto a un array
         }
 
         function verificarDocenas(numeros, alertas) {
             const ultimos17 = numeros.slice(-17);
             const fueraDeDocenas = ultimos17.every(n => !(n >= 1 && n <= 36));
             if (fueraDeDocenas) {
-                alertas.push("17 números sin caer en ninguna de las tres docenas.");
+                alertas.add("17 números sin caer en ninguna de las tres docenas.");
             }
         }
 
@@ -152,7 +164,7 @@
             const ultimos6 = numeros.slice(-6);
             for (const col in columnas) {
                 if (ultimos6.every(n => columnas[col].includes(n))) {
-                    alertas.push(`6 números seguidos en la columna ${col}.`);
+                    alertas.add(`6 números seguidos en la columna ${col}.`);
                     break;
                 }
             }
@@ -161,7 +173,7 @@
         function verificarSeissenas(numeros, alertas) {
             const ultimos4 = numeros.slice(-4);
             if (ultimos4.every(n => n >= 13 && n <= 18) || ultimos4.every(n => n >= 19 && n <= 24)) {
-                alertas.push("4 números seguidos en una de las seisenas (13-18 o 19-24).");
+                alertas.add("4 números seguidos en una de las seisenas (13-18 o 19-24).");
             }
         }
 
@@ -192,13 +204,13 @@
             }
 
             if (!parImparAlternancia) {
-                alertas.push("No ha habido alternancia entre números pares e impares en los últimos 16 números.");
+                alertas.add("No ha habido alternancia entre números pares e impares en los últimos 16 números.");
             }
             if (!rojoNegroAlternancia) {
-                alertas.push("No ha habido alternancia entre números rojos y negros en los últimos 16 números.");
+                alertas.add("No ha habido alternancia entre números rojos y negros en los últimos 16 números.");
             }
             if (!faltaPasaAlternancia) {
-                alertas.push("No ha habido alternancia entre Falta y Pasa en los últimos 16 números.");
+                alertas.add("No ha habido alternancia entre Falta y Pasa en los últimos 16 números.");
             }
         }
 
@@ -214,14 +226,14 @@
             const pasas = ultimos20.filter(n => n >= 19 && n <= 36).length;
 
             if (faltas >= 18 || pasas >= 18) {
-                alertas.push("18 veces seguidas o alternas en Falta o Pasa en un total de 20 números.");
+                alertas.add("18 veces seguidas o alternas en Falta o Pasa en un total de 20 números.");
             }
         }
 
         function verificarNumeros12(numeros, alertas) {
             const ultimos6 = numeros.slice(-6);
             if (ultimos6.every(n => (n >= 10 && n <= 19) || (n >= 20 && n <= 29))) {
-                alertas.push("6 números seguidos entre 10-19 o 20-29.");
+                alertas.add("6 números seguidos entre 10-19 o 20-29.");
             }
         }
 
@@ -236,14 +248,54 @@
             const seisena3Ausente = ultimos6.every(n => !seisena3.includes(n));
 
             if (seisena1Ausente) {
-                alertas.push("La primera seisena no ha salido en los últimos 6 números.");
+                alertas.add("La primera seisena no ha salido en los últimos 6 números.");
             }
             if (seisena2Ausente) {
-                alertas.push("La segunda seisena no ha salido en los últimos 6 números.");
+                alertas.add("La segunda seisena no ha salido en los últimos 6 números.");
             }
             if (seisena3Ausente) {
-                alertas.push("La tercera seisena no ha salido en los últimos 6 números.");
+                alertas.add("La tercera seisena no ha salido en los últimos 6 números.");
             }
+        }
+
+        function verificarDocenaNoSalida(numeros, alertas) {
+            // Verificar si alguna docena no ha salido en los últimos 17 números
+            const ultimos17 = numeros.slice(-17);
+            const docenas = [0, 0, 0]; // Contadores para cada docena
+            ultimos17.forEach(num => {
+                if (num >= 1 && num <= 12) docenas[0]++;
+                else if (num >= 13 && num <= 24) docenas[1]++;
+                else if (num >= 25 && num <= 36) docenas[2]++;
+            });
+            docenas.forEach((count, index) => {
+                if (count === 0) alertas.add(`Docena ${index + 1} no ha salido en los últimos 17 números.`);
+            });
+        }
+
+        function verificarParImparSeguidos(numeros, alertas) {
+            // Verificar si un número par o impar ha salido 16 veces seguidas
+            const esPar = num => num % 2 === 0;
+            let parSeguidos = 0, imparSeguidos = 0;
+            numeros.forEach(num => {
+                if (esPar(num)) {
+                    parSeguidos++;
+                    imparSeguidos = 0;
+                } else {
+                    imparSeguidos++;
+                    parSeguidos = 0;
+                }
+                if (parSeguidos >= 16) alertas.add("16 números pares seguidos.");
+                if (imparSeguidos >= 16) alertas.add("16 números impares seguidos.");
+            });
+        }
+
+        function verificarFaltaPasaSeguidos(numeros, alertas) {
+            // Verificar si "Pasa" o "Falta" ha salido 18 veces en un total de 20 números
+            const ultimos20 = numeros.slice(-20);
+            const falta = ultimos20.filter(n => n >= 1 && n <= 18).length;
+            const pasa = ultimos20.filter(n => n >= 19 && n <= 36).length;
+            if (falta >= 18) alertas.add("18 veces 'Falta' en los últimos 20 números.");
+            if (pasa >= 18) alertas.add("18 veces 'Pasa' en los últimos 20 números.");
         }
 
         function mostrarAlertas(alertas, ruleta) {
@@ -260,6 +312,26 @@
                 });
             }
         }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Asumiendo que las cajas de entrada tienen una clase 'numero-ruleta'
+            // y cada botón tiene un id que corresponde con 'btn-' seguido del id de la caja de entrada
+            const cajas = document.querySelectorAll('.numero-ruleta');
+
+            cajas.forEach(caja => {
+                caja.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        // Obtener el id del botón correspondiente
+                        const botonId = 'btn-' + this.id;
+                        const boton = document.getElementById(botonId);
+                        if (boton) {
+                            boton.click(); // Simular clic en el botón
+                        }
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
