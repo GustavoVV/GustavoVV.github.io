@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Aplicación Tipo Slido</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Agrega el SDK de Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js"></script>
+</head>
+<body>
+  <h1>Encuesta en Vivo</h1>
+
+  <div id="poll-section">
+    <h2>¿Cuál es tu lenguaje de programación favorito?</h2>
+    <form id="poll-form">
+      <label><input type="radio" name="option" value="JavaScript"> JavaScript</label><br>
+      <label><input type="radio" name="option" value="Python"> Python</label><br>
+      <label><input type="radio" name="option" value="Java"> Java</label><br>
+      <label><input type="radio" name="option" value="C#"> C#</label><br>
+      <button type="submit">Votar</button>
+    </form>
+  </div>
+
+  <div id="results-section">
+    <h2>Resultados</h2>
+    <ul id="results-list"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
