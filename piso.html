@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Roommates Website</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+    }
+    .navbar {
+      background-color: #2c3e50;
+    }
+    .navbar-brand, .nav-link {
+      color: #ecf0f1 !important;
+    }
+    .navbar-brand:hover, .nav-link:hover {
+      color: #2ecc71 !important;
+    }
+    .section-title {
+      color: #2c3e50;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .card-title {
+      color: #2c3e50;
+    }
+    .btn-primary {
+      background-color: #2ecc71;
+      border-color: #2ecc71;
+    }
+    .btn-primary:hover {
+      background-color: #27ae60;
+      border-color: #27ae60;
+    }
+    .footer {
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      padding: 20px 0;
+    }
+    .section-content {
+      display: none;
+    }
+    .bg-light-green {
+      background-color: #ecf0f1;
+    }
+    .text-green {
+      color: #2ecc71;
+    }
+  </style>
+  <script>
+    const languages = {
+      en: { translation: { title: "Welcome" } },
+      es: { translation: { title: "Bienvenida" } },
+      fr: { translation: { title: "Bienvenue" } }
+    };
+
+    let currentLanguage = 'en';
+
+    function changeLanguage(lang) {
+      currentLanguage = lang;
+      translatePage();
+    }
+
+    function translatePage() {
+      document.querySelector('#title').innerText = languages[currentLanguage].translation.title;
+    }
+
+    translatePage();
+
+    function showSection(sectionId) {
+      document.querySelectorAll('.section-content').forEach(section => {
+        section.style.display = 'none';
+      });
+      document.getElementById(sectionId).style.display = 'block';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      showSection('about'); // Show the welcome section by default
+    });
+  </script>
+</head>
+
+<body>
+  <!-- Chatbot Integration -->
+  <script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+      chatflowid: "183745c3-31fa-4577-a082-d3bdc7185984",
+      apiHost: "https://flowise-wfdq.onrender.com",
+    })
+  </script>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Roommates</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active"><a class="nav-link" href="javascript:void(0);" onclick="showSection('about')">Welcome</a></li>
+          <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="showSection('rooms')">Rooms</a></li>
+          <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="showSection('contact-list')">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="showSection('apartment-map')">Apartment</a></li>
+          <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="showSection('neighborhood-guide')">Neighborhood</a></li>
+          <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="showSection('city-guide')">City</a></li>
+          <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="showSection('forum')">Message</a></li>
+          <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="showSection('photo-gallery')">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="showSection('recommendations')">Recommendations</a></li>
+          <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="showSection('contact')">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Welcome Section -->
+  <section id="about" class="py-5 section-content">
+    <div class="container">
+      <h2 class="section-title">Welcome to Roommates</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <p>Welcome to our sunny room for rent in Valencia, Spain! We are excited to offer you a <strong>comfortable and functional living space</strong> that combines convenience, compromise, and location.</p>
+          <p>As your hosts, we take great pride in ensuring that our living space is <strong>clean</strong>, <strong>well-maintained</strong>, and equipped with all the necessary amenities to make your stay enjoyable. Here are some important things you should know:</p>
+          <ul>
+            <li><strong>House Rules:</strong> Basic house rules to ensure comfortable and peaceful living.</li>
+            <li><strong>Rent and Bill Due Dates:</strong> Clear due dates to help manage finances and avoid late fees.</li>
+            <li><strong>Cleaning Schedule:</strong> A schedule to ensure common areas are kept clean and tidy.</li>
+          </ul>
+          <p>We offer a range of amenities including high-speed internet, secure locks, smoke and carbon monoxide detectors, comfortable furniture, and more. Our living space is located in the heart of Valencia, just minutes away from the beach and top universities.</p>
+          <p>Contact us today to schedule a tour and live your dream life in sunny Valencia, Spain!</p>
+        </div>
+        <div class="col-md-6">
+          <img src="plano.jpeg" alt="About Us Image" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rooms Section -->
+  <section id="rooms" class="py-5 bg-light-green section-content">
+    <div class="container">
+      <h2 class="section-title">Our Rooms</h2>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card mb-4">
+            <img src="https://via.placeholder.com/400x300" alt="Room Image" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Room 1</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card mb-4">
+            <img src="https://via.placeholder.com/400x300" alt="Room Image" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Room 2</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card mb-4">
+            <img src="https://via.placeholder.com/400x300" alt="Room Image" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Room 3</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card mb-4">
+            <img src="https://via.placeholder.com/400x300" alt="Room Image" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Room 4</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact List Section -->
+  <section id="contact-list" class="py-5 section-content">
+    <div class="container">
+      <h2 class="section-title">Contact List</h2>
+      <table class="table table-bordered">
+        <thead class="thead-light">
+          <tr>
+            <th>Important Phone Numbers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Internet: llamar al 1706 o WhatsApp página de pepephone +34 623 03 34 98</td></tr>
+          <tr><td>Fontanero: [insert phone number here]</td></tr>
+          <tr><td>Cerrajero: [insert phone number here]</td></tr>
+          <tr><td>Bomberos, Urgencias y Emergencias: 112</td></tr>
+          <tr><td>Policía Local: 092</td></tr>
+          <tr><td>Policía Nacional: 091</td></tr>
+          <tr><td>Teléfono Ciudadano: 010</td></tr>
+          <tr><td>Información Generalitat: 012</td></tr>
+          <tr><td>Violencia de Género: 016</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Links Section -->
+  <section id="links" class="py-5 bg-light-green section-content">
+    <div class="container">
+      <h2 class="section-title">Links</h2>
+      <a href="https://www.valencia.es/es/-/tel%C3%A9fonos-de-urgencia-en-la-ciudad-de-valencia" class="link text-green">Teléfonos contacto Ayuntamiento de Valencia</a>
+    </div>
+  </section>
+
+  <!-- Apartment Map Section -->
+  <section id="apartment-map" class="py-5 section-content">
+    <div class="container">
+      <h2 class="section-title">Apartment Map</h2>
+      <p>Interactive map showing:</p>
+      <ul>
+        <li>Rooms: Habitaciones / Rooms / Chambres</li>
+        <li>Bathrooms: Baños / Bathrooms / Salles de bain</li>
+        <li>Kitchen: Cocina / Kitchen / Cuisine</li>
+        <li>Living room: Salón / Living room / Salon</li>
+        <li>Exits: Salidas / Exits / Sorties</li>
+        <li>Thermostats: Termostatos / Thermostats / Thermostats</li>
+        <li>Descriptions and rules for each room: Descripciones y reglas para cada habitación / Descriptions and rules for each room / Descriptions et règles pour chaque pièce</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Neighborhood Guide Section -->
+  <section id="neighborhood-guide" class="py-5 bg-light-green section-content">
+    <div class="container">
+      <h2 class="section-title">Neighborhood Guide</h2>
+      <p>Interactive map of nearby places:</p>
+      <ul>
+        <li>Grocery stores: Supermercados / Grocery stores / Épiceries</li>
+        <li>Restaurants: Restaurantes / Restaurants / Restaurants</li>
+        <li>Laundromats: Lavanderías / Laundromats / Laveries</li>
+        <li>Hospitals: Hospitales / Hospitals / Hôpitaux</li>
+        <li>Public transit stops: Paradas de transporte público / Public transit stops / Arrêts de transport public</li>
+        <li>Address, contact and walking directions for each location: Dirección, contacto y direcciones para caminar a cada ubicación / Address, contact and walking directions for each location / Adresse, contact et directions pour marcher à chaque emplacement</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- City Guide Section -->
+  <section id="city-guide" class="py-5 section-content">
+    <div class="container">
+      <h2 class="section-title">City Guide</h2>
+      <img src="https://i.pinimg.com/736x/4b/4e/de/4b4edee0ddf1f30a15968ebb62490866--valencia.jpg" alt="City Image" class="img-fluid mb-4 rounded">
+      <p>Map of city showing attractions and transit options:</p>
+      <ul>
+        <li>Major landmarks: Principales lugares de interés / Major landmarks / Principaux monuments</li>
+        <li>Attractions: Atracciones / Attractions / Attractions</li>
+        <li>Buses: Autobuses / Buses / Bus</li>
+        <li>Trains: Trenes / Trains / Trains</li>
+        <li>Bike sharing: Compartición de bicicletas / Bike sharing / Partage de vélos</li>
+        <li>Important locations for roommates: Ubicaciones importantes para los compañeros de piso / Important locations for roommates / Emplacements importants pour les colocataires</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Forum Section -->
+  <section id="forum" class="py-5 bg-light-green section-content">
+    <div class="container">
+      <h2 class="section-title">Message Board</h2>
+      <p>Discuss issues, questions or suggestions:</p>
+      <ul>
+        <li>Private messaging option: Opción de mensajería privada / Private messaging option / Option de messagerie privée</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Photo Gallery Section -->
+  <section id="photo-gallery" class="py-5 section-content">
+    <div class="container">
+      <h2 class="section-title">Photo Gallery</h2>
+    </div>
+  </section>
+
+  <!-- Recommendations Section -->
+  <section id="recommendations" class="py-5 bg-light-green section-content">
+    <div class="container">
+      <h2 class="section-title">Recommendations</h2>
+      <p>Each roommate can contribute recommendations for their favorite local restaurants, bars, services, and entertainment in the neighborhood. This helps new roommates discover the area.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5 section-content">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea class="form-control" id="message" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h3>Location</h3>
+          <p>123 Main St.</p>
+          <p>Anytown, USA 12345</p>
+          <h3>Phone</h3>
+          <p>(123) 456-7890</p>
+          <h3>Email</h3>
+          <p>info@roomrentalcompany.com</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer text-center">
+    <div class="container">
+      <p>&copy; 2023 Room Rental Company. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+</html>
