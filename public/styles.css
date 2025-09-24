@@ -21,7 +21,7 @@
 }
 
 /* Typography */
-html{font-size:16px}
+html{font-size:16px;scroll-behavior:smooth}
 body{
   margin:0;
   font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
@@ -55,15 +55,17 @@ body{
       #0B0C10 !important;
   }
 }
-h1{font-size:clamp(2rem, 2.4vw + 1rem, 2.75rem);line-height:1.2;margin:0 0 .75rem}
-h2{font-size:clamp(1.5rem, 1.2vw + 1rem, 2rem);line-height:1.25;margin:2.5rem 0 .75rem}
-h3{font-size:1.125rem;margin:1.25rem 0 .5rem}
-p{margin:.75rem 0;color: var(--text)}
+h1{font-size:clamp(2rem, 2.4vw + 1rem, 2.75rem);line-height:1.2;margin:0 0 16px}
+h2{font-size:clamp(1.5rem, 1.2vw + 1rem, 2rem);line-height:1.25;margin:24px 0 12px}
+h3{font-size:1.125rem;margin:12px 0 8px}
+p{margin:8px 0;color: var(--text)}
+ul{margin:8px 0;padding-left:1.1rem}
+li{margin:4px 0}
 small, .muted{color:var(--muted)}
 
 /* Layout */
 .container{max-width:1100px;margin:0 auto;padding:24px}
-.section{padding: 20px 0}
+.section{padding:24px 0}
 @media(min-width:768px){.section{padding: 36px 0}}
 
 /* Header / Nav */
@@ -95,6 +97,7 @@ header{position:sticky;top:0;background:color-mix(in srgb, var(--bg) 85%, transp
 @media(min-width:960px){.cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;box-shadow:var(--shadow);transition:transform .12s ease, box-shadow .2s ease}
 .card:hover{transform:translateY(-2px);box-shadow:0 4px 10px rgba(0,0,0,.08)}
+.card .card-body>*+*{margin-top:8px}
 .card-premium{border-radius:16px}
 .card-premium.micro{background:#ffffff}
 .card-premium.express{background:#f3f6fa}

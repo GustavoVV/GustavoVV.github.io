@@ -61,9 +61,9 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
   <section class="section">
     <h2 class="h3 border-bottom pb-2">Casos reales</h2>
     <div class="row g-3">
-      <div class="col-md-4"><div class="card h-100 shadow-sm"><div class="card-body"><div class="h4">🏘 Inmobiliaria</div><p class="mb-2">+40% leads en 2 semanas.</p><p class="text-muted small mb-0">Bot de leads + anuncios automáticos.</p></div></div></div>
-      <div class="col-md-4"><div class="card h-100 shadow-sm"><div class="card-body"><div class="h4">📊 Servicios</div><p class="mb-2">−12 h/semana en reporting.</p><p class="text-muted small mb-0">Dashboards automáticos + plantillas.</p></div></div></div>
-      <div class="col-md-4"><div class="card h-100 shadow-sm"><div class="card-body"><div class="h4">🛍 Retail local</div><p class="mb-2">−30% tiempo en anuncios.</p><p class="text-muted small mb-0">Flujos IA y librería de copys.</p></div></div></div>
+      <div class="col-md-4"><div class="card h-100 shadow-sm"><div class="card-body"><div class="h4">📈 Data & Ads</div><p class="mb-2">Visibilidad real del ROI en 72 h.</p><p class="text-muted small mb-0">Unificamos GA4, Meta y Stripe para ver ROAS por campaña y cortar gasto inútil.</p></div></div></div>
+      <div class="col-md-4"><div class="card h-100 shadow-sm"><div class="card-body"><div class="h4">🧲 B2B Leads</div><p class="mb-2">Más reuniones, menos frío.</p><p class="text-muted small mb-0">Lista de 250 decisores cualificados + secuencia IA → primeras 5 llamadas en 10 días.</p></div></div></div>
+      <div class="col-md-4"><div class="card h-100 shadow-sm"><div class="card-body"><div class="h4">🧾 AP/Facturas</div><p class="mb-2">Entrada contable sin dolor.</p><p class="text-muted small mb-0">OCR+IA para convertir 300 facturas/mes en Excel listo para ERP.</p></div></div></div>
     </div>
   </section>
   <section class="section">
@@ -75,7 +75,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
             <span class="badge bg-info-subtle text-info border">Desde 19–49 €</span>
             <h3 class="h5 mt-2">Micro‑consultoría</h3>
             <p>Contratos, revisión compraventa, anuncios optimizados, cartas simples.</p>
-            <a class="btn btn-primary btn-full" href="/servicios/micro-consultoria.html">Resolver mi caso</a>
+            <a class="btn btn-primary btn-full" href="#micro-consultoria">Resolver mi caso</a>
           </div>
         </div>
       </div>
@@ -85,7 +85,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
             <span class="badge bg-success-subtle text-success border">Desde 199–499 €</span>
             <h3 class="h5 mt-2">Consultoría express IA aplicada</h3>
             <p>Bot de leads, anuncios automáticos, integración CRM+IA.</p>
-            <a class="btn btn-success btn-full" href="/servicios/consultoria-express.html">Quiero mi setup</a>
+            <a class="btn btn-success btn-full" href="#consultoria-express">Quiero mi setup</a>
           </div>
         </div>
       </div>
@@ -113,9 +113,78 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         </table>
       </div>
     </div>
+    <!-- Precios detallados -->
+    <div class="row g-3 mt-2">
+      <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h3 class="h6">Micro (19–49 €)</h3><ul class="mb-0"><li>Mini‑análisis 1 KPI (captura + comentario): 29 €</li><li>1 reseña / 1 anuncio optimizado: 19–29 €</li></ul></div></div></div>
+      <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h3 class="h6">Express (199–499 €)</h3><ul class="mb-0"><li>Análisis express con dashboard (1–3 fuentes): 249 €</li><li>Búsqueda + enriquecimiento 250 contactos: 299 €</li><li>Prospección IA (1 campaña / 200 leads): 299 €</li><li>Clasificador soporte + 20 macros IA: 249 €</li><li>Transcripción + resumen (hasta 10 llamadas): 199 €</li><li>Forecast inventario básico: 299 €</li><li>OCR facturas → Excel/ERP (hasta 300 docs): 249 €</li><li>Q&A documental (1 espacio + hasta 1k docs): 499 €</li><li>Reputación (monitor + respuestas IA): 199 €</li><li>NPS/Encuestas IA (setup + 1 informe): 199 €</li></ul></div></div></div>
+      <div class="col-12"><div class="card h-100 shadow-sm"><div class="card-body"><h3 class="h6">Premium (999 €+)</h3><p class="mb-0">Paquetes combinados (ventas+soporte+finanzas) con formación y playbooks, por hitos mensuales.</p></div></div></div>
+    </div>
+    <!-- Módulos plug-and-play -->
+    <div class="mt-4">
+      <h3 class="h6">Nuevos módulos plug‑and‑play</h3>
+      <div class="row g-3">
+        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h3 class="h5">Análisis de datos express</h3><p>KPI pack en 24–72 h: GA4/Ads/Meta/Stripe/Shopify/Sheets, dashboard + alertas semanales.</p></div></div></div>
+        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h3 class="h5">Búsqueda y enriquecimiento de contactos B2B</h3><p>Decisores verificados con web/sector/tamaño. CSV + tags de intención. GDPR‑friendly.</p></div></div></div>
+        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h3 class="h5">Prospección automatizada</h3><p>Secuencias IA (email/WhatsApp/LinkedIn) por rol/cuenta, CRM al día y respuestas sugeridas.</p></div></div></div>
+        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h3 class="h5">Clasificador de soporte</h3><p>IA que etiqueta, prioriza y propone respuesta. Rutas por SLA/tema y FAQ auto‑aprendible.</p></div></div></div>
+        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h3 class="h5">Transcripción → tareas & CRM</h3><p>Grabación/Zoom/Meet → resumen, next steps y push a CRM/Sheets.</p></div></div></div>
+        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h3 class="h5">Forecast demanda e inventario</h3><p>Modelo básico (histórico + estacionalidad) con sugerencias de reposición.</p></div></div></div>
+        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h3 class="h5">Facturas y AP automatizado</h3><p>OCR → Excel/ERP con base/IVA/total y propuesta de asientos.</p></div></div></div>
+        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h3 class="h5">Q&A documental interno</h3><p>Buscador semántico sobre contratos, manuales o procesos con fuentes.</p></div></div></div>
+        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h3 class="h5">Reputación y reseñas</h3><p>Monitor de reseñas con alertas y respuestas IA + panel de temas/sentimiento.</p></div></div></div>
+        <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h3 class="h5">NPS/encuestas con IA</h3><p>Formularios simples; la IA resume motivos, temas y alertas de churn.</p></div></div></div>
+      </div>
+    </div>
     <div class="separator"></div>
   </section>
 
+  <!-- Sección integrada: Consultoría express -->
+  <section id="consultoria-express" class="section">
+    <h2 class="h3 border-bottom pb-2">Consultoría express IA aplicada</h2>
+    <div class="bg-body-secondary rounded-3 p-3 p-lg-4 mb-3">
+      <div class="d-flex flex-column flex-md-row gap-3 align-items-start">
+        <div class="d-flex align-items-center"><i class="bi bi-shield-check me-2"></i><span>Garantía 7 días: si no ves resultado, no facturamos.</span></div>
+        <div class="d-flex align-items-center"><i class="bi bi-box2-heart me-2"></i><span>Entregas cerradas, sin proyectos eternos.</span></div>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-4"><div class="card h-100 shadow-sm"><div class="card-body"><span class="badge bg-info-subtle text-info border">299 €</span><h3 class="h5 mt-2">Bot de leads</h3><p class="mb-0">Capta, responde FAQs, agenda.</p></div></div></div>
+      <div class="col-md-4"><div class="card h-100 shadow-sm"><div class="card-body"><span class="badge bg-info-subtle text-info border">199 €</span><h3 class="h5 mt-2">Anuncios automáticos</h3><p class="mb-0">Borradores desde fichas/CSV + plantillas.</p></div></div></div>
+      <div class="col-md-4"><div class="card h-100 shadow-sm"><div class="card-body"><span class="badge bg-info-subtle text-info border">499 €</span><h3 class="h5 mt-2">CRM + IA</h3><p class="mb-0">Plantillas y seguimiento con IA.</p></div></div></div>
+    </div>
+  </section>
+
+  <!-- Sección integrada: Micro‑consultoría -->
+  <section id="micro-consultoria" class="section">
+    <h2 class="h3 border-bottom pb-2">Micro‑consultoría</h2>
+    <p class="text-secondary">IA + revisión humana. Entregas 24–72 h.</p>
+    <div class="row g-3">
+      <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h3 class="h5">Qué vendemos</h3><ul class="mb-0"><li>Contrato de alquiler adaptado</li><li>Revisión express de compraventa</li><li>Optimización de anuncios</li><li>Cartas/alegaciones simples</li></ul></div></div></div>
+      <div class="col-md-6"><div class="card h-100 shadow-sm"><div class="card-body"><h3 class="h5">Precios</h3><ul class="mb-0"><li>Contrato: 29 €</li><li>Revisión compraventa: 49 €</li><li>Anuncio optimizado: 19 €</li><li>Carta/alegación: 29 €</li></ul></div></div></div>
+    </div>
+  </section>
+
+  <!-- Sección integrada: FAQ reducida -->
+  <section id="faq" class="section">
+    <h2 class="h3 border-bottom pb-2">FAQ</h2>
+    <div class="accordion" id="faq-home-full">
+      <div class="accordion-item"><h2 class="accordion-header" id="fh1a"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#fh1cA">¿Y si no tengo ni idea de IA?</button></h2><div id="fh1cA" class="accordion-collapse collapse show" data-bs-parent="#faq-home-full"><div class="accordion-body">Te guiamos con ejemplos y entregas listas. No necesitas conocimientos previos.</div></div></div>
+      <div class="accordion-item"><h2 class="accordion-header" id="fh2a"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fh2cA">¿Qué pasa con mis datos?</button></h2><div id="fh2cA" class="accordion-collapse collapse" data-bs-parent="#faq-home-full"><div class="accordion-body">NDA a petición, cifrado en tránsito y borrado en 30 días. RGPD.</div></div></div>
+      <div class="accordion-item"><h2 class="accordion-header" id="fh3a"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fh3cA">¿Y si necesito cambios?</button></h2><div id="fh3cA" class="accordion-collapse collapse" data-bs-parent="#faq-home-full"><div class="accordion-body">Incluye 1 ronda de ajustes. Adicionales con tarifa transparente.</div></div></div>
+      <div class="accordion-item"><h2 class="accordion-header" id="fh4a"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#fh4cA">¿Qué pasa si no estoy satisfecho?</button></h2><div id="fh4cA" class="accordion-collapse collapse" data-bs-parent="#faq-home-full"><div class="accordion-body">Garantía 7 días: si no ves resultado, no facturamos.</div></div></div>
+    </div>
+  </section>
+
+  <!-- Sección integrada: Contacto -->
+  <section id="contacto" class="section">
+    <h2 class="h3 border-bottom pb-2">Contacto</h2>
+    <form id="contacto-form" class="row g-3" action="https://formspree.io/f/your-id" method="POST" enctype="multipart/form-data">
+      <div class="col-md-6"><label class="form-label">Nombre *</label><input class="form-control" name="nombre" required /></div>
+      <div class="col-md-6"><label class="form-label">Email *</label><input class="form-control" type="email" name="email" required /></div>
+      <div class="col-12"><label class="form-label">Mensaje</label><textarea class="form-control" name="mensaje" rows="6"></textarea></div>
+      <div class="col-12 d-flex gap-2"><button class="btn btn-primary" type="submit">Enviar</button><a class="btn btn-outline-secondary" href={import.meta.env.BASE_URL + 'diagnostico.html'}>Diagnóstico gratuito</a></div>
+    </form>
+  </section>
   <section class="section">
     <h2 class="h3 border-bottom pb-2">Proceso</h2>
     <div class="row g-3 text-center">

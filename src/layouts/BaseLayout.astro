@@ -7,6 +7,13 @@ const langHref = isEn ? BASE + 'valia.html' : BASE + 'en/valia.html';
 const langLabel = isEn ? 'ES' : 'EN';
 const prefix = isEn ? 'en/' : '';
 const contactPage = isEn ? 'contact.html' : 'contacto.html';
+// One-page toggle between ES and EN single pages
+const isValiaEN = currentPath.endsWith('valia-en.html');
+const onePageToggleHref = BASE + (isValiaEN ? 'valia.html' : 'valia-en.html');
+const onePageToggleLabel = isValiaEN ? 'ES' : 'EN';
+// Detect one-page context to decide between anchors vs full pages
+const isValiaES = currentPath.endsWith('valia.html') || currentPath === BASE || currentPath.endsWith('/index.html');
+const isOnePage = isValiaES || isValiaEN;
 const WHATSAPP_NUMBER = '34675933698';
 const WA_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola 👋, vengo de la web. Me interesa el plan Micro/Express. Mi objetivo es [ej: ahorrar tiempo en reporting/anuncios]. ¿Me cuentas cómo empezar?')}`;
 ---
@@ -50,12 +57,23 @@ const WA_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola
         </button>
         <div id="nav" class="collapse navbar-collapse">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href={BASE + prefix + 'servicios/micro-consultoria.html'}>{isEn ? 'Micro consulting' : 'Micro‑consultoría'}</a></li>
-            <li class="nav-item"><a class="nav-link" href={BASE + prefix + 'servicios/consultoria-express.html'}>{isEn ? 'Express setup' : 'Setup express'}</a></li>
-            <li class="nav-item"><a class="nav-link" href={BASE + prefix + 'faq.html'}>FAQ</a></li>
-            <li class="nav-item"><a class="nav-link" href={BASE + prefix + contactPage}>{isEn ? 'Contact' : 'Contacto'}</a></li>
+            {isOnePage ? (
+              <>
+                <li class="nav-item"><a class="nav-link" href="#consultoria-express">{isEn ? 'Express' : 'Express'}</a></li>
+                <li class="nav-item"><a class="nav-link" href="#micro-consultoria">{isEn ? 'Micro' : 'Micro'}</a></li>
+                <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacto">{isEn ? 'Contact' : 'Contacto'}</a></li>
+              </>
+            ) : (
+              <>
+                <li class="nav-item"><a class="nav-link" href={BASE + prefix + 'servicios/micro-consultoria.html'}>{isEn ? 'Micro consulting' : 'Micro‑consultoría'}</a></li>
+                <li class="nav-item"><a class="nav-link" href={BASE + prefix + 'servicios/consultoria-express.html'}>{isEn ? 'Express setup' : 'Setup express'}</a></li>
+                <li class="nav-item"><a class="nav-link" href={BASE + prefix + 'faq.html'}>FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href={BASE + prefix + contactPage}>{isEn ? 'Contact' : 'Contacto'}</a></li>
+              </>
+            )}
             <li class="nav-item ms-lg-3"><a class="btn btn-success btn-sm" href={WA_URL} target="_blank" rel="noopener">WhatsApp</a></li>
-            <li class="nav-item ms-lg-2"><a class="btn btn-outline-secondary btn-sm d-flex align-items-center" href={langHref}><i class="bi bi-translate me-1"></i> {langLabel}</a></li>
+            <li class="nav-item ms-lg-2"><a class="btn btn-outline-primary btn-sm d-flex align-items-center" href={onePageToggleHref}><i class="bi bi-globe me-1"></i> {onePageToggleLabel} one‑page</a></li>
           </ul>
         </div>
       </nav>
