@@ -1,0 +1,56 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+<BaseLayout title="FAQ" description="Resolvemos el 90% de dudas aquí.">
+  <h1>FAQ</h1>
+  <p class="lead">Resolvemos el 90% de dudas aquí. Si queda algo, agenda una llamada de 15’.</p>
+
+  <h2>Servicios y alcance</h2>
+  <div class="accordion" id="faq">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="q1"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1">¿Qué pasa con la confidencialidad de mis documentos?</button></h2>
+      <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#faq"><div class="accordion-body">Firmamos NDA a petición, borrado programado en 30 días (o inmediato si lo pides). Cumplimos RGPD.</div></div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="q2"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2">¿Qué pasa si no quedo satisfecho con el resultado?</button></h2>
+      <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Garantía: si no ves resultado en 7 días, no facturamos.</div></div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="q3"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3">¿Incluye soporte después de la entrega?</button></h2>
+      <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Sí, entregamos con tutorial + breve formación. Para continuidad, ofrecemos paquetes mensuales.</div></div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="q4"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a4">¿Necesito saber de IA para usarlo?</button></h2>
+      <div id="a4" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">No, entregamos sistemas listos para usar con guía paso a paso.</div></div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="q5"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a5">¿Esto sustituye a mi abogado / gestor?</button></h2>
+      <div id="a5" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">No. La micro‑consultoría ofrece documentación optimizada, no representación legal ni asesoría colegiada.</div></div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="q6"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a6">¿Se adapta a mi sector (inmobiliaria, retail, servicios…)?</button></h2>
+      <div id="a6" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Sí, trabajamos con plantillas específicas y las ajustamos a tu caso.</div></div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="q7"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a7">¿Ofrecéis servicio urgente?</button></h2>
+      <div id="a7" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Sí, entregas en &lt;24 h según disponibilidad (con suplemento).</div></div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="q8"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a8">¿Qué formatos de archivo recibo?</button></h2>
+      <div id="a8" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">PDF y Word/Doc, listos para usar o modificar.</div></div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="q9"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a9">¿Qué no está incluido?</button></h2>
+      <div id="a9" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Proyectos a largo plazo o representación legal. Para eso, <a href="/servicios/consultoria-express.html">consultoría express IA</a>.</div></div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="q10"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a10">¿Dónde trabajáis?</button></h2>
+      <div id="a10" class="accordion-collapse collapse" data-bs-parent="#faq"><div class="accordion-body">Atendemos a empresas en España y LatAm, 100% online.</div></div>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <p>¿Duda rara o caso especial? Escríbenos por <a href="https://wa.me/34675933698?text=Hola%20%F0%9F%91%8B%2C%20vengo%20de%20la%20web.%20Me%20interesa%20el%20plan%20Micro%2FExpress.%20Mi%20objetivo%20es%20%5Bej%3A%20ahorrar%20tiempo%20en%20reporting%2Fanuncios%5D.%20%C2%BFMe%20cuentas%20c%C3%B3mo%20empezar%3F" target="_blank" rel="noopener">WhatsApp</a> y lo resolvemos en minutos.</p>
+  </div>
+</BaseLayout>
+
