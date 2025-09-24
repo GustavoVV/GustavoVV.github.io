@@ -1,0 +1,113 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+<BaseLayout title="Contacto — respuesta & encaje en <24 h" description="Dinos objetivo, urgencia y presupuesto. Si prefieres, agenda una llamada de 15’.">
+  <h1>Contacto</h1>
+  <p class="text-muted">Respuesta y encaje en &lt;24 h. Podemos firmar NDA a petición.</p>
+  <form id="contacto" class="row g-3" action="https://formspree.io/f/your-id" method="POST" enctype="multipart/form-data" novalidate>
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+    <div class="col-md-6">
+      <label class="form-label">Nombre *</label>
+      <input class="form-control" name="nombre" required />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Email *</label>
+      <input class="form-control" name="email" type="email" required />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Teléfono</label>
+      <input class="form-control" name="telefono" inputmode="tel" placeholder="+34 6XX XXX XXX" />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Servicio *</label>
+      <select class="form-select" name="servicio" required>
+        <option value="Micro-consultoría">Micro‑consultoría</option>
+        <option value="Consultoría express IA">Consultoría express IA</option>
+        <option value="Implantación IA (Premium)">Implantación IA (Premium)</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Empresa</label>
+      <input class="form-control" name="empresa" placeholder="Nombre de la compañía" />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Cargo</label>
+      <input class="form-control" name="cargo" placeholder="Propietario, Dirección, Operaciones, IT…" />
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Nº empleados</label>
+      <select class="form-select" name="empleados">
+        <option value="">Selecciona</option>
+        <option>&lt;10</option><option>10–49</option>
+        <option>50–249</option><option>250+</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Presupuesto aproximado</label>
+      <select class="form-select" name="presupuesto">
+        <option value="">Selecciona</option>
+        <option>&lt; 300 €</option>
+        <option>300–999 €</option>
+        <option>1.000–3.000 €</option>
+        <option>3.000+ €</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Urgencia *</label>
+      <select class="form-select" name="urgencia" required>
+        <option>24–48 h</option>
+        <option>Esta semana</option>
+        <option>Sin prisa (descubrimiento)</option>
+      </select>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Objetivo de negocio (1 frase) *</label>
+      <input class="form-control" name="objetivo" placeholder="Ej.: reducir horas operativas un 30%" required />
+    </div>
+    <div class="col-12">
+      <label class="form-label">Mensaje</label>
+      <textarea class="form-control" name="mensaje" rows="6" placeholder="Contexto, herramientas (CRM/ERP), volúmenes, métricas objetivo…"></textarea>
+    </div>
+    <div class="col-12">
+      <label class="form-label">Adjuntar archivo (opcional)</label>
+      <input class="form-control" type="file" name="archivo" accept=".pdf,.doc,.docx,.pptx,.xlsx,.txt,.md,.csv" />
+      <p class="text-muted small mb-0">Se aplica confidencialidad. Borrado programado en 30 días o inmediato si lo solicitas.</p>
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" id="acepto" type="checkbox" name="acepto" required />
+        <label for="acepto" class="form-check-label">Acepto la <a href="/legal/privacidad.html" target="_blank" rel="noopener">política de datos</a>.</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" id="nda" type="checkbox" name="nda" />
+        <label for="nda" class="form-check-label">Quiero firmar NDA antes de enviar documentación.</label>
+      </div>
+    </div>
+    <div class="col-12 d-flex gap-2">
+      <button type="submit" class="btn btn-primary">Enviar</button>
+      <a href="https://calendly.com/tu-calendly/15min" class="btn btn-outline-secondary">Agendar llamada 15’</a>
+      <a href="https://wa.me/34675933698?text=Hola%20vengo%20de%20la%20web%20Quiero%20MICRO%20o%20EXPRESS" target="_blank" rel="noopener" class="btn btn-ghost">WhatsApp</a>
+    </div>
+    <p id="form-ok" class="alert alert-success py-2 px-3 my-2" hidden>¡Gracias! Te contactamos &lt;24 h.</p>
+    <p id="form-err" class="alert alert-danger py-2 px-3 my-2" hidden>Algo fue mal. Escríbenos a hola@tudominio.com.</p>
+  </form>
+  <script>
+    const form = document.getElementById('contacto');
+    form.addEventListener('submit', async (e) => {
+      if (!form.checkValidity()) return;
+      document.getElementById('form-ok').hidden = true;
+      document.getElementById('form-err').hidden = true;
+      // Si usas tu API, descomenta este bloque y quita el action del form
+      /*
+      e.preventDefault();
+      try {
+        const data = new FormData(form);
+        const res = await fetch('/api/contact', { method: 'POST', body: data });
+        if (res.ok) { form.reset(); document.getElementById('form-ok').hidden = false; }
+        else { document.getElementById('form-err').hidden = false; }
+      } catch { document.getElementById('form-err').hidden = false; }
+      */
+    });
+  </script>
+</BaseLayout>
+

@@ -1,0 +1,39 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+<BaseLayout title="FAQ" description="Resolvemos el 90% de dudas aquí.">
+  <h1>FAQ</h1>
+  <p class="lead">Resolvemos 90% de dudas aquí. Si te queda algo, el chat te atiende.</p>
+  <div class="accordion" id="faq">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="q1">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="true" aria-controls="a1">
+          ¿La micro‑consultoría es asesoría legal?
+        </button>
+      </h2>
+      <div id="a1" class="accordion-collapse collapse show" aria-labelledby="q1" data-bs-parent="#faq">
+        <div class="accordion-body">No; documentación asistida con revisión de sentido común.</div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="q2">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-expanded="false" aria-controls="a2">
+          ¿Plazos estándar?
+        </button>
+      </h2>
+      <div id="a2" class="accordion-collapse collapse" aria-labelledby="q2" data-bs-parent="#faq">
+        <div class="accordion-body">&lt;24 h micro‑consultoría; 1–3 días paquetes express.</div>
+      </div>
+    </div>
+  </div>
+  <h2>Servicios y alcances</h2>
+  <details>
+    <summary>¿La micro‑consultoría es asesoría legal?</summary>
+    <p>No; documentación asistida con revisión de sentido común.</p>
+  </details>
+  <details>
+    <summary>¿Plazos estándar?</summary>
+    <p>&lt;24 h micro‑consultoría; 1–3 días paquetes express.</p>
+  </details>
+</BaseLayout>
+
