@@ -1,0 +1,14 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+---
+<BaseLayout title="FAQ" description="We answer most questions here.">
+  <h1>FAQ</h1>
+  <p class="lead">We answer most questions here. If anything’s missing, book a 15’ call.</p>
+  <div class="accordion" id="faq-en">
+    <div class="accordion-item"><h2 class="accordion-header" id="e1"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#e1c">What about confidentiality?</button></h2><div id="e1c" class="accordion-collapse collapse show" data-bs-parent="#faq-en"><div class="accordion-body">NDA on request, 30‑day deletion (or immediate), GDPR compliant.</div></div></div>
+    <div class="accordion-item"><h2 class="accordion-header" id="e2"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#e2c">What if I’m not satisfied?</button></h2><div id="e2c" class="accordion-collapse collapse" data-bs-parent="#faq-en"><div class="accordion-body">7‑day results guarantee: otherwise, no charge.</div></div></div>
+    <div class="accordion-item"><h2 class="accordion-header" id="e3"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#e3c">Post‑delivery support?</button></h2><div id="e3c" class="accordion-collapse collapse" data-bs-parent="#faq-en"><div class="accordion-body">Tutorial + short training included; optional monthly support plans.</div></div></div>
+    <div class="accordion-item"><h2 class="accordion-header" id="e4"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#e4c">Do I need to know AI?</button></h2><div id="e4c" class="accordion-collapse collapse" data-bs-parent="#faq-en"><div class="accordion-body">No. We deliver ready‑to‑use systems with step‑by‑step guidance.</div></div></div>
+  </div>
+</BaseLayout>
+
