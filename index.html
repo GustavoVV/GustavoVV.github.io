@@ -168,98 +168,10 @@ i ⚜️ Templària.
     </section>
   </main>
 
-  <!-- Toast segueix existint, però ja no depens sols d’ell -->
-  <div class="toast" id="toast">Hui és 12 d’octubre! 🎉</div>
-
-  <script>
-    // Utilitats
-    const $ = (id) => document.getElementById(id);
-    const dEl = $("days"), hEl = $("hours"), mEl = $("minutes"), sEl = $("seconds");
-
-    function pad(n) { return String(n).padStart(2, "0"); }
-    function isToday12Oct(d = new Date()) { return d.getMonth() === 9 && d.getDate() === 12; }
-
-    // Objectiu: 12 d'octubre de l'any actual (si ja ha passat, l'any següent)
-    function targetDate() {
-      const now = new Date();
-      const passed =
-        now.getMonth() > 9 || (now.getMonth() === 9 && now.getDate() > 12);
-      const year = passed ? now.getFullYear() + 1 : now.getFullYear();
-      return new Date(year, 9, 12, 0, 0, 0, 0);
-    }
-
-    function showToast() {
-      const t = $("toast");
-      t.classList.add("show");
-      setTimeout(() => t.classList.remove("show"), 4000);
-      clearInterval(timer);
-    }
-
-    function showDia12() {
-      // UI: amaga compte enrere i mostra missatge
-      $("grid").style.display = "none";
-      $("meta").style.display = "none";
-      $("dia12").style.display = "block";
-      $("headline-days").textContent = "0";
-      $("titol").textContent = "Hui és 12 d’octubre! 🎉";
-      // Toast opcional
-      showToast();
-    }
-
-    function tick() {
-      const now = new Date();
-      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || "Local";
-      $("tz").textContent = tz;
-      $("today").textContent = new Intl.DateTimeFormat(undefined, { dateStyle: "full" }).format(now);
-
-      // Si hui és 12 d’octubre, mostra el missatge i para.
-      if (isToday12Oct(now)) {
-        showDia12();
-        return;
-      }
-
-      // Si no és el dia, mostra compte enrere.
-      const tgt = targetDate();
-      const diff = tgt - now;
-
-      if (diff <= 0) {
-        // Per si cau exactament a mitjanit, obrim missatge
-        showDia12();
-        return;
-      }
-
-      const totalSeconds = Math.floor(diff / 1000);
-      const days = Math.floor(totalSeconds / 86400);
-      const hours = Math.floor((totalSeconds % 86400) / 3600);
-      const minutes = Math.floor((totalSeconds % 3600) / 60);
-      const seconds = totalSeconds % 60;
-
-      dEl.textContent = days;
-      hEl.textContent = pad(hours);
-      mEl.textContent = pad(minutes);
-      sEl.textContent = pad(seconds);
-      $("headline-days").textContent = days;
-    }
-
-    let timer = setInterval(tick, 1000);
-    tick();
-
-    // PWA instal·lable bàsica (deferred prompt)
-    let deferredPrompt;
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      deferredPrompt = e;
-      $("install").style.display = 'inline-flex';
-    });
-    $("install").addEventListener('click', async () => {
-      if (!deferredPrompt) return;
-      deferredPrompt.prompt();
-      await deferredPrompt.userChoice;
-      deferredPrompt = null;
-    });
-  </script>
+  
 </body>
 </html>
+
 
 
 
