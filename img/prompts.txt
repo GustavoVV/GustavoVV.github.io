@@ -1,0 +1,24 @@
+Hero (hero-dashboard.jpg)
+Prompt: Oficina moderna con pantallas mostrando dashboards de marketing, un desarrollador explicando resultados a un cliente; estética tech profesional en tonos azul y blanco. Texto superpuesto: "IA que entrega resultados, no promesas — Valia".
+Alt: Consultor mostrando dashboards de ROI en tiempo real.
+
+Value props (value-infografia.jpg)
+Prompt: Infografía minimalista con cuatro bloques: reloj (tiempo), gráfico con flecha descendente (costes), cerebro-chip (IA+experiencia), etiqueta de precio fijo (transparencia). Fondo claro, estilo limpio.
+Alt: Infografía con beneficios clave: tiempo, costes, IA+experiencia y precio claro.
+
+Casos (casos-collage.jpg)
+Prompt: Collage profesional de tres escenas: dashboard publicitario, hoja de Excel autogenerada, ejecutiva recibiendo notificación de leads; luz natural, estilo corporativo.
+Alt: Collage de resultados: ROI, Excel de facturas y notificaciones de leads.
+
+Módulos (modulos-orquesta.jpg)
+Prompt: Panel visual estilo SaaS con módulos conectados (data, CRM, leads, soporte, finanzas) unidos por líneas tipo red neuronal. Tonos azul-gris. Texto: "Tu empresa, orquestada por IA — Valia".
+Alt: Módulos conectados que representan la orquestación por IA.
+
+Proceso (proceso-4pasos.jpg)
+Prompt: Infografía horizontal de 4 pasos: Cliente envía archivo → IA genera → Humano revisa → Entrega final. Iconos minimalistas en verdes y azules. Texto: "De archivo a entrega en 72 h — Valia".
+Alt: Proceso en 4 pasos desde brief hasta entrega.
+
+Garantía (garantia-sello.jpg)
+Prompt: Cliente satisfecho mirando un informe en su portátil con un sello grande que dice "RESULTADOS GARANTIZADOS". Estética moderna y profesional.
+Alt: Cliente con sello de resultados garantizados.
+

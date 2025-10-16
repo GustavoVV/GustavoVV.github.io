@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-label="Cliente con sello de resultados garantizados.">
+  <rect width="1200" height="500" fill="#0A3D91"/>
+  <g>
+    <rect x="100" y="100" width="680" height="300" rx="18" fill="#FFFFFF"/>
+    <rect x="140" y="160" width="600" height="40" rx="8" fill="#F7FAFF" stroke="#E5E7EB"/>
+    <rect x="140" y="220" width="600" height="40" rx="8" fill="#F7FAFF" stroke="#E5E7EB"/>
+    <rect x="140" y="280" width="600" height="40" rx="8" fill="#F7FAFF" stroke="#E5E7EB"/>
+  </g>
+  <g>
+    <circle cx="980" cy="250" r="120" fill="#12B981"/>
+    <text x="980" y="250" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF">RESULTADOS
+GARANTIZADOS</text>
+  </g>
+</svg>
+

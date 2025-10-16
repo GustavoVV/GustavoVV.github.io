@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="700" viewBox="0 0 1600 700" role="img" aria-label="Collage de resultados: ROI, Excel de facturas y notificaciones de leads.">
+  <!-- Fondo -->
+  <rect width="1600" height="700" fill="#FFFFFF"/>
+  <!-- Tarjeta 1: Dashboard publicitario -->
+  <g transform="translate(80,80)">
+    <rect width="440" height="540" rx="18" fill="#F7FAFF" stroke="#E5E7EB"/>
+    <text x="24" y="48" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#0A0D14">ROI en 72 h</text>
+    <g transform="translate(24,80)" fill="#0A3D91">
+      <rect width="28" height="180" x="0" y="120" rx="6"/>
+      <rect width="28" height="120" x="44" y="180" rx="6"/>
+      <rect width="28" height="220" x="88" y="80" rx="6"/>
+      <rect width="28" height="160" x="132" y="140" rx="6"/>
+      <rect width="28" height="200" x="176" y="100" rx="6"/>
+    </g>
+    <polyline points="260,340 310,280 360,300 410,240" fill="none" stroke="#12B981" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Tarjeta 2: Excel de facturas -->
+  <g transform="translate(580,80)">
+    <rect width="440" height="260" rx="18" fill="#F7FAFF" stroke="#E5E7EB"/>
+    <text x="24" y="48" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#0A0D14">Excel de facturas</text>
+    <g transform="translate(24,80)" fill="#4B5563" font-family="Inter, Arial, sans-serif" font-size="14">
+      <rect x="0" y="0" width="392" height="36" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+      <text x="12" y="24">Factura 001  |  Base 100,00  |  IVA 21,00  |  Total 121,00</text>
+      <rect x="0" y="56" width="392" height="36" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+      <text x="12" y="80">Factura 002  |  Base 240,00  |  IVA 50,40  |  Total 290,40</text>
+      <rect x="0" y="112" width="392" height="36" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/>
+      <text x="12" y="136">Factura 003  |  Base 78,00   |  IVA 16,38  |  Total 94,38</text>
+    </g>
+  </g>
+  <!-- Tarjeta 3: Notificación de leads -->
+  <g transform="translate(580,360)">
+    <rect width="440" height="260" rx="18" fill="#F7FAFF" stroke="#E5E7EB"/>
+    <text x="24" y="48" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700" fill="#0A0D14">Leads entrantes</text>
+    <g transform="translate(24,80)">
+      <rect x="0" y="0" width="392" height="56" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+      <circle cx="28" cy="28" r="12" fill="#12B981"/>
+      <text x="52" y="34" font-family="Inter, Arial, sans-serif" font-size="15" fill="#0A0D14">Nuevo lead: María G. (B2B)</text>
+      <rect x="0" y="72" width="392" height="56" rx="12" fill="#FFFFFF" stroke="#E5E7EB"/>
+      <circle cx="28" cy="100" r="12" fill="#12B981"/>
+      <text x="52" y="106" font-family="Inter, Arial, sans-serif" font-size="15" fill="#0A0D14">Nuevo lead: Jorge R. (Retail)</text>
+    </g>
+  </g>
+</svg>

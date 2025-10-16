@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="700" viewBox="0 0 1600 700" role="img" aria-label="Módulos conectados que representan la orquestación por IA.">
+  <rect width="1600" height="700" fill="#FFFFFF"/>
+  <g fill="#0A0D14" font-family="Inter, Arial, sans-serif" font-size="16">
+    <g>
+      <rect x="200" y="140" width="240" height="120" rx="16" fill="#F7FAFF" stroke="#E5E7EB"/>
+      <text x="230" y="208">Data</text>
+    </g>
+    <g>
+      <rect x="520" y="140" width="240" height="120" rx="16" fill="#F7FAFF" stroke="#E5E7EB"/>
+      <text x="550" y="208">CRM</text>
+    </g>
+    <g>
+      <rect x="840" y="140" width="240" height="120" rx="16" fill="#F7FAFF" stroke="#E5E7EB"/>
+      <text x="870" y="208">Leads</text>
+    </g>
+    <g>
+      <rect x="1160" y="140" width="240" height="120" rx="16" fill="#F7FAFF" stroke="#E5E7EB"/>
+      <text x="1188" y="208">Soporte</text>
+    </g>
+    <g>
+      <rect x="360" y="360" width="280" height="120" rx="16" fill="#F7FAFF" stroke="#E5E7EB"/>
+      <text x="400" y="428">Finanzas</text>
+    </g>
+    <g>
+      <rect x="760" y="360" width="280" height="120" rx="16" fill="#F7FAFF" stroke="#E5E7EB"/>
+      <text x="800" y="428">Marketing</text>
+    </g>
+    <!-- Conexiones -->
+    <g stroke="#C7D2FE" stroke-width="6" fill="none">
+      <path d="M440,200 C500,200 560,200 520,200"/>
+      <path d="M760,200 C820,200 880,200 840,200"/>
+      <path d="M1080,200 C1140,200 1200,200 1160,200"/>
+      <path d="M320,200 C320,300 380,360 360,360"/>
+      <path d="M880,260 C880,320 900,360 900,360"/>
+      <path d="M1280,260 C1280,320 900,420 900,420"/>
+    </g>
+    <text x="540" y="620" font-size="22" fill="#4B5563">Tu empresa, orquestada por IA — Valia</text>
+  </g>
+</svg>
+
