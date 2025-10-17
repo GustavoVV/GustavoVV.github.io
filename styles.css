@@ -43,6 +43,16 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
+/* Mobile defaults */
+img{max-width:100%;height:auto}
+button,.btn{font-size:clamp(14px, 2.5vw, 16px);padding:.6em 1.2em;border-radius:12px}
+.container{width:100%;max-width:1100px;padding:16px}
+@media (max-width:768px){
+  .section{padding:20px 0}
+  .container{padding:16px}
+  .row{margin-left:0;margin-right:0}
+  .btn{width:100%}
+}
 
 /* Variant: softer background */
 .bg-soft{
@@ -82,6 +92,10 @@ header{position:sticky;top:0;background:color-mix(in srgb, var(--bg) 85%, transp
 .nav{display:flex;gap:14px;flex-wrap:wrap}
 .nav a{color:var(--text);text-decoration:none;padding:8px 10px;border-radius:8px}
 .nav a:hover,.nav a:focus{background:var(--surface);outline:2px solid transparent}
+/* Constrain brand logo size */
+.navbar .navbar-brand img{height:28px;max-height:28px;width:auto}
+/* Ensure contrast for links */
+.nav a:focus-visible{outline:3px solid var(--primary)}
 
 /* Hero */
 .hero{padding: clamp(32px, 8vw, 72px) 0}
